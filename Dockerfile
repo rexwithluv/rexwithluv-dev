@@ -12,8 +12,14 @@ RUN npm run build
 
 FROM nginx:alpine
 
-# LABEL org.opencontainers.image.source="https://github.com/rexwithluv/rexwithluv-dev"
+LABEL org.opencontainers.image.source="https://github.com/rexwithluv/rexwithluv-dev"
 
-COPY --from=build /app/build/ /app/build/
+RUN rm /etc/nginx/conf.d/default.conf
+
+RUN rm /usr/share/nginx/html/index.html
+
+COPY nginx.conf /etc/nginx/conf.d/
+
+COPY --from=build /app/build/ /usr/share/nginx/html
 
 CMD ["nginx", "-g", "daemon off;"]
