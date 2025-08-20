@@ -1,0 +1,11 @@
+Dockerfile
+.dockerignore
+.gitignore
+.git
+.npmrc
+.prettier*
+.svelte-kit/
+node_modules/
+build/
+.git/
+README.md

@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build: .
+    container_name: rexwithluv-dev
+    ports:
+      - 8989:80
+
+networks:
+  rexwithluv-dev-net:
