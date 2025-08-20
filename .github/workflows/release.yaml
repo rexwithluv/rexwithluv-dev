@@ -1,4 +1,4 @@
-name: Build and Push Docker images
+name: Release, Build and Push Docker images
 
 on:
   push:
@@ -30,6 +30,7 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
+            conventional-changelog-conventionalcommits
 
   docker:
     needs: [release]
