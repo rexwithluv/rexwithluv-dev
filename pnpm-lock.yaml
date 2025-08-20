@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@icons-pack/svelte-simple-icons':
+        specifier: ^6.4.0
+        version: 6.4.0(@sveltejs/kit@2.31.1(@sveltejs/vite-plugin-svelte@6.1.2(svelte@5.38.1)(vite@7.1.2))(svelte@5.38.1)(vite@7.1.2))(svelte@5.38.1)
       '@lucide/svelte':
         specifier: ^0.539.0
         version: 0.539.0(svelte@5.38.1)
@@ -206,6 +209,13 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@icons-pack/svelte-simple-icons@6.4.0':
+    resolution: {integrity: sha512-5apMwcxpXQhTzNCbnMjFabzbV4QmkUBOUksLKwqCgTFzyCdlL/w4Oasrc6JRjN5IkY0RJQtFuNYnN1q+1ehxbQ==}
+    engines: {node: '>=20', pnpm: '>=9'}
+    peerDependencies:
+      '@sveltejs/kit': ^2.5.0
+      svelte: ^4.2.0 || ^5.0.0
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -848,6 +858,11 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.9':
     optional: true
+
+  '@icons-pack/svelte-simple-icons@6.4.0(@sveltejs/kit@2.31.1(@sveltejs/vite-plugin-svelte@6.1.2(svelte@5.38.1)(vite@7.1.2))(svelte@5.38.1)(vite@7.1.2))(svelte@5.38.1)':
+    dependencies:
+      '@sveltejs/kit': 2.31.1(@sveltejs/vite-plugin-svelte@6.1.2(svelte@5.38.1)(vite@7.1.2))(svelte@5.38.1)(vite@7.1.2)
+      svelte: 5.38.1
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
