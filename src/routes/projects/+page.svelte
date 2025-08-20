@@ -1,6 +1,6 @@
 <script lang="ts">
-	import ProjectCard from '$lib/components/ProjectCard.svelte';
-	import type { Project } from '$lib/types/Projects';
+	import ProjectCard from '$lib/components/ProjectCard.svelte'
+	import type { Project } from '$lib/types/Projects'
 
 	const projects: Project[] = [
 		{
@@ -9,9 +9,17 @@
 			description:
 				'Simple web application to store quotes with minimalist frontend and ExpressJS & MongoDB backend.',
 			stack: ['Node.js', 'Express.js', 'MongoDB', 'Vue.js', 'Docker', 'Kubernetes'],
-			github: 'https://github.com/rexwithluv/mongo-verba'
-		}
-	];
+			github: 'https://github.com/rexwithluv/mongo-verba',
+		},
+		{
+			name: 'NAGA-FCT',
+			url: 'https://rexwithluv.dev/naga/',
+			description:
+				'Una aplicación web permite a los docentes administrar y gestionar las FCT del alumnado de Ciclos Formativos.',
+			stack: ['Java', 'Spring Boot', 'MariaDB', 'Docker', 'Vue.js', 'TypeScript'],
+			github: 'https://github.com/rexwithluv/naga-fct',
+		},
+	]
 </script>
 
 <div class="page-content">
@@ -22,51 +30,9 @@
 		intereses y las habilidades que he cultivado.
 	</h2>
 
-	{#each projects as project}
-		<ProjectCard {project}></ProjectCard>
-	{/each}
+	<div>
+		{#each projects as project}
+			<ProjectCard {project}></ProjectCard>
+		{/each}
+	</div>
 </div>
-
-<style>
-	.page-content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		min-height: calc(100vh - 4rem);
-		text-align: center;
-		padding: 2rem;
-	}
-
-	h1,
-	h2 {
-		font-family: var(--font-family-title);
-	}
-
-	h2 {
-		font-weight: 400;
-		max-width: 600px;
-	}
-
-	.projects-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(200pc, 1fr));
-		gap: 2rem;
-	}
-
-	.status-indicator {
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		display: inline-block;
-		margin-left: 0.5rem;
-	}
-
-	.status-indicator.online {
-		background-color: green;
-	}
-
-	.status-indicator.offline {
-		background-color: red;
-	}
-</style>

@@ -43,6 +43,25 @@
 		padding: 0;
 	}
 
+	:global(h1,h2){
+		font-family: var(--font-family-title);
+	}
+
+	:global(h2){
+		font-weight: 400;
+		max-width: 600px;
+	}
+
+	:global(.page-content){
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: calc(100vh - 4rem);
+		text-align: center;
+		padding: 2rem;
+	}
+
 	main {
 		transition: margin-left 0.3s ease;
 		margin-left: var(--sidebar-reduced-width);
