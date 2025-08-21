@@ -14,6 +14,7 @@ jobs:
 
     outputs:
       new_release_published: ${{steps.semantic-release.outputs.new_release_published}}
+      release_version: ${{steps.semantic-release.outputs.new_release_version}}
 
     steps:
       - name: Checkout repository
@@ -64,5 +65,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ghcr.io/${{github.repository}}:${{needs.release.outputs.release_version}}
           labels: ${{ steps.meta.outputs.labels }}
