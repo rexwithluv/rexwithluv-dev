@@ -1,13 +1,13 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
-	import Sidebar from '$lib/components/Sidebar.svelte';
+	import favicon from '$lib/assets/favicon.svg'
+	import Sidebar from '$lib/components/Sidebar.svelte'
 
-	let isSidebarOpen = $state(false);
+	let isSidebarOpen = $state(false)
 	const toggleSidebar = () => {
-		isSidebarOpen = !isSidebarOpen;
-	};
+		isSidebarOpen = !isSidebarOpen
+	}
 
-	let { children } = $props();
+	let { children } = $props()
 </script>
 
 <svelte:head>
@@ -39,33 +39,37 @@
 		font-family: var(--font-family-body);
 		color: var(--raisin-black);
 		background-color: var(--off-white);
+
 		margin: 0;
 		padding: 0;
 	}
 
-	:global(h1,h2){
+	:global(h1, h2) {
 		font-family: var(--font-family-title);
 	}
 
-	:global(h2){
+	:global(h2) {
 		font-weight: 400;
 		max-width: 600px;
 	}
 
-	:global(.page-content){
+	:global(.page-content) {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		min-height: calc(100vh - 4rem);
+		min-height: 100svh;
 		text-align: center;
-		padding: 2rem;
+		box-sizing: border-box;
 	}
 
 	main {
 		transition: margin-left 0.3s ease;
 		margin-left: var(--sidebar-reduced-width);
-		padding: 2rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		overflow-y: auto;
+		box-sizing: border-box;
 	}
 
 	main.sidebar-open {
