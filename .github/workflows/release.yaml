@@ -65,5 +65,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/${{github.repository}}:${{needs.release.outputs.release_version}}
+          tags: |
+            ghcr.io/${{github.repository}}:${{needs.release.outputs.release_version}}
+            ghcr.io/${{github.repository}}:latest
           labels: ${{ steps.meta.outputs.labels }}

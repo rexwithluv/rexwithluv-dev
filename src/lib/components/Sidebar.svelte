@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { ChevronLeft, ChevronRight } from '@lucide/svelte';
+	import { ChevronLeft, ChevronRight } from '@lucide/svelte'
 
-	let { isSidebarOpen, toggleSidebar } = $props();
+	let { isSidebarOpen, toggleSidebar } = $props()
 </script>
 
 <div class="sidebar" class:is-open={isSidebarOpen}>
