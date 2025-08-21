@@ -1,9 +1,14 @@
 services:
   app:
-    build: .
+    image: node:22-alpine
     container_name: rexwithluv-dev
     ports:
-      - 8989:80
+      - 8989:5173
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: npm run dev
 
 networks:
   rexwithluv-dev-net:
+    driver: bridge

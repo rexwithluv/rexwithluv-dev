@@ -1,25 +1,6 @@
 <script lang="ts">
-	import ProjectCard from '$lib/components/ProjectCard.svelte'
-	import type { Project } from '$lib/types/Projects'
-
-	const projects: Project[] = [
-		{
-			name: 'Mongo Verba',
-			url: 'https://rexwithluv.dev/mongo-verba/',
-			description:
-				'Simple web application to store quotes with minimalist frontend and ExpressJS & MongoDB backend.',
-			stack: ['Node.js', 'Express.js', 'MongoDB', 'Vue.js', 'Docker', 'Kubernetes'],
-			github: 'https://github.com/rexwithluv/mongo-verba',
-		},
-		{
-			name: 'NAGA-FCT',
-			url: 'https://rexwithluv.dev/naga/',
-			description:
-				'Una aplicación web permite a los docentes administrar y gestionar las FCT del alumnado de Ciclos Formativos.',
-			stack: ['Java', 'Spring Boot', 'MariaDB', 'Docker', 'Vue.js', 'TypeScript'],
-			github: 'https://github.com/rexwithluv/naga-fct',
-		},
-	]
+	import ProjectCard from '$lib/components/projects/ProjectCard.svelte'
+	import projects from '$lib/components/projects/projects'
 </script>
 
 <div class="page-content">
@@ -30,9 +11,17 @@
 		intereses y las habilidades que he cultivado.
 	</h2>
 
-	<div>
+	<div class="cards">
 		{#each projects as project}
 			<ProjectCard {project}></ProjectCard>
 		{/each}
 	</div>
 </div>
+
+<style>
+	.cards {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+	}
+</style>
