@@ -1,3 +1,11 @@
+# [0.4.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.3.0...v0.4.0) (2025-08-21)
+
+
+### Features
+
+* add images in project cards ([2a0c18c](https://github.com/rexwithluv/rexwithluv-dev/commit/2a0c18c8cd706adb25a099f3094e0183431d1740))
+* add integration with github api ([b2b08b3](https://github.com/rexwithluv/rexwithluv-dev/commit/b2b08b35d9fe1a5bfbf0e6743114aab302ce5d91))
+
 # [0.3.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.2.0...v0.3.0) (2025-08-21)
 
 
