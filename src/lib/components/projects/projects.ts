@@ -8,6 +8,7 @@ const projects: Project[] = [
 			'Simple web application to store quotes with minimalist frontend and ExpressJS & MongoDB backend.',
 		stack: ['Node.js', 'Express.js', 'MongoDB', 'Vue.js', 'Docker', 'Kubernetes'],
 		github: 'https://github.com/rexwithluv/mongo-verba',
+		imageName: "mongo-verba"
 	},
 	{
 		name: 'NAGA-FCT',
