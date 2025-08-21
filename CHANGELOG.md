@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.2.0...v0.3.0) (2025-08-21)
+
+
+### Features
+
+* add k8s dir and deployment ([#4](https://github.com/rexwithluv/rexwithluv-dev/issues/4)) ([2e9b1f3](https://github.com/rexwithluv/rexwithluv-dev/commit/2e9b1f367b5b7debbcc9bb130f3b891e6669955f))
+
 # [0.2.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.1.1...v0.2.0) (2025-08-21)
 
 
