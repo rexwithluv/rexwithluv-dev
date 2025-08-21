@@ -1,25 +1,33 @@
 <script lang="ts">
-	import { Github, Globe } from '@lucide/svelte';
-	import axios from 'axios';
-	import { onMount } from 'svelte';
+	import IconMap from '$lib/IconMap'
+	import { SiGithub } from '@icons-pack/svelte-simple-icons'
+	import { Globe } from '@lucide/svelte'
+	import axios from 'axios'
+	import { onMount } from 'svelte'
+	import StatusIndicator from './StatusIndicator.svelte'
+	import type { Project } from '$lib/types/Projects'
 
-	let { project } = $props();
+	let { project }: { project: Project } = $props()
 
-	let isOnline: boolean = $state(false);
-	let screenshotUrl: string = 'https://placehold.co/600x400';
+	let projectIsOnline: boolean = $state(false)
+	let screenshotUrl: string = 'https://placehold.co/600x400'
 
 	async function getProjectIsOnline(url: string): Promise<boolean> {
 		try {
-			const response = await axios.get(url);
-			return response.status === 200;
+			const response = await axios.get(url)
+			return response.status === 200
 		} catch (error) {
-			return false;
+			return false
 		}
 	}
 
 	onMount(async () => {
-		isOnline = await getProjectIsOnline(project.url);
-	});
+		if (import.meta.env.DEV) {
+			projectIsOnline = Math.random() < 0.5
+		} else {
+			projectIsOnline = await getProjectIsOnline(project.url)
+		}
+	})
 </script>
 
 <div class="project-card">
@@ -30,25 +38,31 @@
 	<div class="content">
 		<div class="header">
 			<h3>{project.name}</h3>
-			<span class="status-indicator" class:online={isOnline}></span>
+			<StatusIndicator isOnline={projectIsOnline} />
 		</div>
+
 		<p class="description">{project.description}</p>
-		<div class="stack-list">
+
+		<div class="tech-stack">
 			{#each project.stack as tech}
-				<span class="tech-tag">{tech}</span>
+				{@const Icon = IconMap[tech as keyof typeof IconMap]}
+				<div class="tech">
+					<Icon />
+					<span>{tech}</span>
+				</div>
 			{/each}
 		</div>
 	</div>
 
 	<div class="actions">
-		{#if isOnline}
+		{#if projectIsOnline}
 			<a href={project.url} target="_blank" rel="noopener noreferrer" class="btn">
 				<Globe size={20} />
 				Demo
 			</a>
 		{/if}
 		<a href={project.github} target="_blank" rel="noopener noreferrer" class="btn">
-			<Github size={20} />
+			<SiGithub />
 			GitHub
 		</a>
 	</div>
@@ -62,7 +76,9 @@
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
-		transition: transform 0.2s ease-in-out;
+		transition:
+			transform 0.2s ease-in-out,
+			box-shadow 0.2s ease-in-out;
 	}
 
 	.project-card:hover {
@@ -71,7 +87,6 @@
 	}
 
 	.image-container {
-		width: 100%;
 		height: 200px;
 		overflow: hidden;
 	}
@@ -84,6 +99,9 @@
 
 	.content {
 		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
 	}
 
 	.header {
@@ -103,33 +121,49 @@
 		color: #666;
 		margin: 0;
 		font-size: 0.9rem;
+		flex-grow: 1;
 	}
 
-	.status-indicator {
-		width: 12px;
-		height: 12px;
-		border-radius: 50%;
-		background-color: #ccc;
+	.tech-stack {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		text-align: center;
+		padding-top: 1.6rem;
 	}
 
-	.status-indicator.online {
-		background-color: #28a745;
+	.tech {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.tech span {
+		display: block;
+		text-align: center;
+		margin-top: 0.5rem;
 	}
 
 	.actions {
 		display: flex;
-		gap: 1rem;
+		justify-content: center;
 		padding: 1.5rem;
+		gap: 2rem;
 		border-top: 1px solid #eee;
-		margin-top: auto;
 	}
 
-	.btn {
+	.actions a {
 		display: inline-flex;
 		align-items: center;
 		gap: 0.5rem;
 		text-decoration: none;
-		color: var(--raisin-black);
+		color: var(--raisin-black, #2a2a2a);
 		font-weight: bold;
+		transition: color 0.2s ease-in-out;
+	}
+
+	.actions a:hover {
+		color: var(--primary-color, #007bff);
 	}
 </style>

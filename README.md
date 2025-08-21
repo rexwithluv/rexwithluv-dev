@@ -6,3 +6,11 @@
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 My portfolio: **[rexwithluv.dev](https://rexwithluv.dev)**.
+
+## Roadmap
+
+- Fill the pages
+  - Skills
+  - About me
+  - Socials
+- On the "Projects" page, make the tech stack, description, and name be taken from the project's README.md (shields.io).

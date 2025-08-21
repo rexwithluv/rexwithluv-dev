@@ -4,7 +4,7 @@
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
-		"dev": "vite dev",
+		"dev": "vite dev --host",
 		"build": "vite build",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync || echo ''",
@@ -32,6 +32,7 @@
 		]
 	},
 	"dependencies": {
+		"@icons-pack/svelte-simple-icons": "^6.4.0",
 		"@lucide/svelte": "^0.539.0",
 		"axios": "^1.11.0"
 	}
