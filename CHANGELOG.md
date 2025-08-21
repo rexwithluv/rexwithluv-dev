@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.4.0...v0.5.0) (2025-08-21)
+
+
+### Features
+
+* add skills page ([#6](https://github.com/rexwithluv/rexwithluv-dev/issues/6)) ([98f8624](https://github.com/rexwithluv/rexwithluv-dev/commit/98f8624b7381fea7f5733df7ce9e38cf278eae43))
+
 # [0.4.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.3.0...v0.4.0) (2025-08-21)
 
 
