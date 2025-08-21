@@ -22,7 +22,7 @@
 		SiTypescript,
 		SiVuedotjs,
 	} from '@icons-pack/svelte-simple-icons'
-	import { Cloud, Code, GitFork } from '@lucide/svelte'
+	import { Cloud, Code, Database, Server } from '@lucide/svelte'
 </script>
 
 <div class="page-content">
@@ -51,7 +51,7 @@
 		</div>
 
 		<div class="skill-card">
-			<GitFork size={48} color="var(--violet-purple)" />
+			<Server size={48} color="var(--violet-purple)" />
 			<h3 class="card-title">Backend</h3>
 			<p>Node.js, Express.js, Python, Java, Spring Boot</p>
 			<div class="icon-group">
@@ -64,7 +64,7 @@
 		</div>
 
 		<div class="skill-card">
-			<GitFork size={48} color="var(--violet-purple)" />
+			<Database size={48} color="var(--violet-purple)" />
 			<h3 class="card-title">Bases de datos</h3>
 			<p>MariaDB, MySQL, MongoDB</p>
 			<div class="icon-group">
