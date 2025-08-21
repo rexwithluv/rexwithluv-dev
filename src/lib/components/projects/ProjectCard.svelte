@@ -1,16 +1,18 @@
 <script lang="ts">
 	import IconMap from '$lib/IconMap'
+	import type { Project } from '$lib/types/Projects'
 	import { SiGithub } from '@icons-pack/svelte-simple-icons'
 	import { Globe } from '@lucide/svelte'
 	import axios from 'axios'
-	import { onMount } from 'svelte'
+	import { onDestroy, onMount } from 'svelte'
 	import StatusIndicator from './StatusIndicator.svelte'
-	import type { Project } from '$lib/types/Projects'
 
 	let { project }: { project: Project } = $props()
 
+	const isEnvironmentDev = import.meta.env.DEV
 	let projectIsOnline: boolean = $state(false)
-	let screenshotUrl: string = 'https://placehold.co/600x400'
+	let image: string = project.imageName ?? 'unvailable'
+	let intervalId: number
 
 	async function getProjectIsOnline(url: string): Promise<boolean> {
 		try {
@@ -21,18 +23,27 @@
 		}
 	}
 
-	onMount(async () => {
-		if (import.meta.env.DEV) {
+	async function updateProjectStatus() {
+		if (isEnvironmentDev) {
 			projectIsOnline = Math.random() < 0.5
 		} else {
 			projectIsOnline = await getProjectIsOnline(project.url)
 		}
+	}
+
+	onMount(async () => {
+		await updateProjectStatus()
+		intervalId = setInterval(updateProjectStatus, 5000)
+	})
+
+	onDestroy(() => {
+		clearInterval(intervalId)
 	})
 </script>
 
 <div class="project-card">
 	<div class="image-container">
-		<img src={screenshotUrl} alt={`Screenshot of ${project.name}`} />
+		<img src={`/images/${image}.png`} alt={`Screenshot of ${project.name}`} />
 	</div>
 
 	<div class="content">
