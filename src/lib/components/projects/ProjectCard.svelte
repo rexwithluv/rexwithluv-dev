@@ -12,7 +12,21 @@
 	const isEnvironmentDev = import.meta.env.DEV
 	let projectIsOnline: boolean = $state(false)
 	let image: string = project.imageName ?? 'unvailable'
+
+	let description: string = $state('')
+	let githubUrl: string = $state('')
+	let publicUrl: string = $state('')
 	let intervalId: number
+
+	async function getRepoData(repoName: string) {
+		try {
+			const response = await axios.get(`https://api.github.com/repos/rexwithluv/${repoName}`)
+			return response.data
+		} catch (error) {
+			console.error(`Error obteniendo los datos de ${repoName}`)
+			console.error(error)
+		}
+	}
 
 	async function getProjectIsOnline(url: string): Promise<boolean> {
 		try {
@@ -27,11 +41,16 @@
 		if (isEnvironmentDev) {
 			projectIsOnline = Math.random() < 0.5
 		} else {
-			projectIsOnline = await getProjectIsOnline(project.url)
+			projectIsOnline = await getProjectIsOnline(publicUrl)
 		}
 	}
 
 	onMount(async () => {
+		const repoData = await getRepoData(project.repoName)
+		description = repoData.description
+		githubUrl = repoData.html_url
+		publicUrl = repoData.homepage
+
 		await updateProjectStatus()
 		intervalId = setInterval(updateProjectStatus, 5000)
 	})
@@ -52,10 +71,10 @@
 			<StatusIndicator isOnline={projectIsOnline} />
 		</div>
 
-		<p class="description">{project.description}</p>
+		<p class="description">{description}</p>
 
 		<div class="tech-stack">
-			{#each project.stack as tech}
+			{#each project.techStack as tech}
 				{@const Icon = IconMap[tech as keyof typeof IconMap]}
 				<div class="tech">
 					<Icon />
@@ -67,12 +86,12 @@
 
 	<div class="actions">
 		{#if projectIsOnline}
-			<a href={project.url} target="_blank" rel="noopener noreferrer" class="btn">
+			<a href={publicUrl} target="_blank" rel="noopener noreferrer" class="btn">
 				<Globe size={20} />
 				Demo
 			</a>
 		{/if}
-		<a href={project.github} target="_blank" rel="noopener noreferrer" class="btn">
+		<a href={githubUrl} target="_blank" rel="noopener noreferrer" class="btn">
 			<SiGithub />
 			GitHub
 		</a>
