@@ -16,3 +16,10 @@ Mi portfolio: **[rexwithluv.dev](https://rexwithluv.dev)**.
   - Arreglar los estilos para elimniar el scroll vertical innecesario (aunque creo que ocurre en más páginas)
 - Página 'Projects'
   - Arreglar las imágenes de las Cards para que siempre se vean completas
+- Acessibilidad / Compatibilidad
+  - Tomar colores *websafe*. El sitio web en móvil se ve excesivamente "azul"
+- Sidebar
+  - Debería volver a encoger una vez cambiamos de página o no?
+  - En móvil sería preferible que fuera un UpBar/NavBar (parte superior)
+  - Estando encogido debería tal vez mostrar iconos en lugar de todo el nombre para seguir permitiendo navegar, y con esto haríamos que si se exapnde, quedara así aunque cambiaramos de página.
+  
