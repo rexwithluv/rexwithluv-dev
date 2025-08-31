@@ -1,3 +1,11 @@
+# [0.6.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.5.0...v0.6.0) (2025-08-31)
+
+
+### Features
+
+* add naga-fct image ([3dca7be](https://github.com/rexwithluv/rexwithluv-dev/commit/3dca7be4de393452728fd7be1343253b18e0e11f))
+* add socials page ([a75d246](https://github.com/rexwithluv/rexwithluv-dev/commit/a75d24653ff6a9d2f0d142ea8827b684073aaa0a))
+
 # [0.5.0](https://github.com/rexwithluv/rexwithluv-dev/compare/v0.4.0...v0.5.0) (2025-08-21)
 
 
