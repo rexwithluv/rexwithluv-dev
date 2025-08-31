@@ -16,14 +16,4 @@
 		text-align: center;
 		padding: 2rem;
 	}
-
-	h1,
-	h2 {
-		font-family: var(--font-family-title);
-	}
-
-	h2 {
-		font-weight: 400;
-		max-width: 600px;
-	}
 </style>
