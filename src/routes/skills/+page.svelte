@@ -27,7 +27,7 @@
 
 <div class="page-content">
 	<h1>Habilidades</h1>
-	<h2 class="sub-heading">
+	<h2 >
 		Un vistazo a las herramientas que uso para construir mis proyectos, desde el frontend al backend
 		y la infraestructura.
 	</h2>
@@ -89,14 +89,7 @@
 </div>
 
 <style>
-	.sub-heading {
-		max-width: 600px;
-		font-family: var(--font-family-body);
-		font-size: 1.2rem;
-		margin-top: 0;
-		margin-bottom: 3rem;
-		font-style: italic;
-	}
+
 
 	.skills-grid {
 		display: grid;
