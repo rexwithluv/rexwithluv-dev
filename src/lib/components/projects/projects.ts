@@ -8,9 +8,10 @@ const projects: Project[] = [
 		imageName: 'mongo-verba',
 	},
 	{
-		name: 'NAGA',
+		name: 'NAGA-FCT',
 		repoName: 'naga-fct',
 		techStack: ['Java', 'Spring Boot', 'MariaDB', 'Docker', 'Vue.js', 'TypeScript'],
+		imageName: 'naga-fct',
 	},
 ]
 
