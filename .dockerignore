@@ -1,11 +1,9 @@
 Dockerfile
 .dockerignore
-.gitignore
-.git
+.git*
 .npmrc
 .prettier*
 .svelte-kit/
 node_modules/
-build/
 .git/
 README.md
