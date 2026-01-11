@@ -1,27 +1,35 @@
 <script lang="ts">
-	interface Project {
-		id: string;
-		title: string;
-		desc: string;
-	}
+	import type { Project } from './interfaces';
+	import ProjectCard from './project-card.svelte';
 
 	const projects: Project[] = [
-		{ id: '01', title: 'Poké-Dashboard', desc: 'Visualizador de stats de Sinnoh y Alola.' },
-		{ id: '02', title: 'Esoteric Commerce', desc: 'Tienda online para lecturas de Tarot.' },
-		{ id: '03', title: 'Pattern Generator', desc: 'Algoritmo para patrones de ganchillo.' }
+		// {
+		// 	name: 'NAGA-FCT',
+		// 	desc: '',
+		// 	techStack: [],
+		// 	url: ''
+		// },
+		{
+			name: 'MongoVerba',
+			desc: 'A minimalist web application for collecting and managing personal quotes.',
+			techStack: ['NodeJS', 'ExpressJS', 'MongoDB', 'VueJS', 'TypeScript'],
+			url: 'https://rexwithluv.dev/mongo-verba'
+		},
+		{
+			name: 'ParkingVigo',
+			desc: 'Real-time availability tracker for parking spaces across Vigo.',
+			techStack: ['Svelte', 'TypeScript', 'TailwindCSS'],
+			url: 'https://rexwithluv.dev/parking-vigo'
+		}
 	];
 </script>
 
 <div id="projects" class="reveal flex min-h-[80vh] scroll-mt-20 flex-col justify-center px-[10%]">
-	<h2 class="mb-10 text-4xl font-bold">Selected Projects</h2>
-	<div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+	<h2 class="mb-12 text-4xl font-bold tracking-tight">Projects</h2>
+
+	<div class="project-grid grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
 		{#each projects as project}
-			<div
-				class="group cursor-pointer border-b border-gray-300 pb-5 transition-all duration-300 hover:translate-x-2 hover:border-[#5e60ce]"
-			>
-				<h3 class="mb-2 text-xl font-bold">{project.id} / {project.title}</h3>
-				<p class="text-gray-500">{project.desc}</p>
-			</div>
+			<ProjectCard {project} />
 		{/each}
 	</div>
 </div>
