@@ -2,9 +2,11 @@
 	import type { SocialNetwork } from './interfaces';
 
 	const socials: SocialNetwork[] = [
-		{ name: 'GITHUB', url: 'https://github.com/rexwithluv' },
-		{ name: 'LINKEDIN', url: 'https://www.linkedin.com/in/alonsoruedaaaron/' },
-		{ name: 'EMAIL', url: 'mailto:r.alonsoaaron@gmail.com' }
+		{ name: 'github', url: 'https://github.com/rexwithluv' },
+		{ name: 'linkedin', url: 'https://www.linkedin.com/in/alonsoruedaaaron/' },
+		{ name: 'instagram', url: 'https://www.instagram.com/rexwithluv/' },
+		{ name: 'mastodon', url: 'https://neopaquita.es/@rexwithluv' },
+		{ name: 'email', url: 'mailto:r.alonsoaaron@gmail.com' }
 	];
 </script>
 
@@ -12,7 +14,7 @@
 	<h2 class="mb-10 text-4xl font-bold">Let's Connect</h2>
 	<div class="flex flex-wrap gap-8">
 		{#each socials as link}
-			<a href={link.url} class="group relative text-xl font-bold text-[#5e60ce]">
+			<a href={link.url} class="group relative text-xl font-bold text-[#5e60ce] uppercase">
 				{link.name}
 				<span
 					class="absolute bottom-[-5px] left-0 h-[2px] w-0 bg-[#5e60ce] transition-all duration-300 group-hover:w-full"
@@ -20,6 +22,4 @@
 			</a>
 		{/each}
 	</div>
-
-	
 </div>

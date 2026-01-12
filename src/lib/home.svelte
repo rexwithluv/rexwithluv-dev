@@ -5,8 +5,9 @@
 	<h1 class="mb-5 text-5xl leading-[1.1] font-bold md:text-8xl">
 		Building <br /> Digital Threads.
 	</h1>
-	<p class="max-w-xl text-xl text-gray-600">
-		Soy Aarón, desarrollador web. Entrelazando código, ganchillo y una visión intuitiva de la
-		tecnología.
+	<p class="max-w-xl text-xl leading-relaxed text-gray-600">
+		Soy <span class="font-semibold text-[#1a1a1a]">Aarón</span>, desarrollador enfocado en crear
+		soluciones estructuradas y mantenibles. Creo en el código escrito con paciencia, donde cada
+		línea tiene un propósito y cada sistema se construye con cuidado.
 	</p>
 </div>

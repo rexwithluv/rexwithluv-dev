@@ -3,12 +3,12 @@
 	import ProjectCard from './project-card.svelte';
 
 	const projects: Project[] = [
-		// {
-		// 	name: 'NAGA-FCT',
-		// 	desc: '',
-		// 	techStack: [],
-		// 	url: ''
-		// },
+		{
+			name: 'NAGA-FCT',
+			desc: 'A management system designed to track FCT (vocational training internships).',
+			techStack: ['Spring Boot', 'Vue', 'TypeScript', 'MariaDB'],
+			url: 'https://rexwithluv.dev/naga-fct'
+		},
 		{
 			name: 'MongoVerba',
 			desc: 'A minimalist web application for collecting and managing personal quotes.',
