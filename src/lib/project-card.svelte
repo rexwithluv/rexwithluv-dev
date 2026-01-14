@@ -7,7 +7,7 @@
 <a
 	href={project.url}
 	target="_blank"
-	class="group flex flex-col border-b border-gray-300 pb-8 transition-all duration-500 hover:border-[#5e60ce]"
+	class="group flex flex-col border-b border-gray-300 pb-8 transition-all duration-500 hover:border-indigo-500"
 >
 	<h3
 		class="mb-3 text-2xl font-bold tracking-tight transition-transform duration-300 group-hover:translate-x-1"

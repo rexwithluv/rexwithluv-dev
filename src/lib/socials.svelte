@@ -14,10 +14,10 @@
 	<h2 class="mb-10 text-4xl font-bold">Let's Connect</h2>
 	<div class="flex flex-wrap gap-8">
 		{#each socials as link}
-			<a href={link.url} class="group relative text-xl font-bold text-[#5e60ce] uppercase">
+			<a href={link.url} class="group relative text-xl font-bold text-indigo-500 uppercase">
 				{link.name}
 				<span
-					class="absolute bottom-[-5px] left-0 h-[2px] w-0 bg-[#5e60ce] transition-all duration-300 group-hover:w-full"
+					class="absolute bottom-[-5px] left-0 h-[2px] w-0 bg-indigo-500 transition-all duration-300 group-hover:w-full"
 				></span>
 			</a>
 		{/each}

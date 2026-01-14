@@ -45,9 +45,9 @@
 			{#each technicalGroups as group}
 				<div>
 					<h3
-						class="mb-5 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-[#5e60ce] uppercase"
+						class="mb-5 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase"
 					>
-						<span class="h-1.5 w-1.5 rounded-full bg-[#5e60ce]"></span>
+						<span class="h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
 						{group.category}
 					</h3>
 					<div class="flex flex-wrap gap-x-6 gap-y-3">
@@ -60,7 +60,7 @@
 		</div>
 
 		<div class="rounded-2xl border border-gray-100 bg-gray-50/50 p-8 backdrop-blur-sm">
-			<h3 class="mb-8 text-xs font-bold tracking-[0.2em] text-[#5e60ce] uppercase">
+			<h3 class="mb-8 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase">
 				Creative Mindset
 			</h3>
 			<div class="flex flex-col gap-8">

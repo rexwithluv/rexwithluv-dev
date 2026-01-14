@@ -17,7 +17,7 @@
 		{#each pages as page}
 			<a
 				href="#{page}"
-				class="text-sm font-normal capitalize transition-colors hover:text-[#5e60ce]"
+				class="text-sm font-normal capitalize transition-colors hover:text-indigo-500"
 			>
 				{page}
 			</a>
