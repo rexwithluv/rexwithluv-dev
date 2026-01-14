@@ -9,8 +9,8 @@
 			skills: ['Node.js', 'Spring Boot', 'Python', 'Java']
 		},
 		{
-			category: 'Infra & Tools',
-			skills: ['Docker', 'Linux', 'Git', 'Kubernetes', 'CI/CD Basics', 'MariaDB', 'MongoDB']
+			category: 'Infraestructura / Herramientas',
+			skills: ['Docker', 'Linux', 'Git', 'Kubernetes', 'CI/CD', 'MariaDB', 'MongoDB', 'Grafana']
 		}
 	];
 
@@ -25,7 +25,7 @@
 		},
 		{
 			title: 'Resolución Metódica',
-			desc: 'Enfoque paso a paso para desgranar problemas, apoyado en la documentación y la lógica.'
+			desc: 'Enfoque paso a paso para dividir problemas, apoyado en la documentación y la lógica.'
 		},
 		{
 			title: 'Mentalidad de Aprendizaje',
@@ -41,17 +41,17 @@
 	<h2 class="mb-16 text-4xl font-bold">Skills</h2>
 
 	<div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
-		<div class="space-y-10">
+		<div class="space-y-12">
 			{#each technicalGroups as group}
 				<div>
 					<h3
-						class="mb-5 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase"
+						class="mb-6 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase"
 					>
 						<span class="h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
 						{group.category}
 					</h3>
-					<div class="flex flex-wrap gap-x-6 gap-y-3">
-						{#each group.skills as skill}
+					<div class="flex flex-wrap gap-x-6 gap-y-4">
+						{#each group.skills.sort() as skill}
 							<span class="text-xl font-light text-gray-700">{skill}</span>
 						{/each}
 					</div>
@@ -59,19 +59,27 @@
 			{/each}
 		</div>
 
-		<div class="rounded-2xl border border-gray-100 bg-gray-50/50 p-8 backdrop-blur-sm">
-			<h3 class="mb-8 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase">
-				Creative Mindset
-			</h3>
-			<div class="flex flex-col gap-8">
-				{#each creativeSkills as craft}
-					<div>
-						<h4 class="text-lg font-bold text-gray-800">{craft.title}</h4>
-						<p class="text-sm leading-relaxed text-gray-500 italic">
-							{craft.desc}
-						</p>
-					</div>
-				{/each}
+		<div class="space-y-12">
+			<div>
+				<h3
+					class="mb-6 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase"
+				>
+					<span class="h-1.5 w-1.5 rounded-full bg-indigo-500"></span>
+					Soft Skills
+				</h3>
+
+				<div class="space-y-8">
+					{#each creativeSkills as craft}
+						<div class="group">
+							<h4 class="text-xl font-light text-gray-700">
+								{craft.title}
+							</h4>
+							<p class="mt-1 text-sm leading-relaxed text-gray-500">
+								{craft.desc}
+							</p>
+						</div>
+					{/each}
+				</div>
 			</div>
 		</div>
 	</div>
