@@ -1,0 +1,7 @@
+{
+	"projects": {
+		"naga": "Un sistema de gestión diseñado para realizar un seguimiento de las prácticas de formación profesional (FCT).",
+		"mongo-verba": "Una web minimalista que almacena y muestra citas personales.",
+		"parking-vigo": "Visualiza en tiempo real el número de plazas disponibles en los diversos Parkings de Vigo."
+	}
+}

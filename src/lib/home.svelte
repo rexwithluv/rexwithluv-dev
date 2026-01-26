@@ -7,7 +7,7 @@
 	</h1>
 	<p class="max-w-xl text-xl leading-relaxed text-gray-600">
 		Soy <span class="font-semibold text-zinc-900">Aarón</span>, desarrollador enfocado en crear
-		soluciones estructuradas y mantenibles. Creo en el código escrito con paciencia, donde cada
-		línea tiene un propósito y cada sistema se construye con cuidado.
+		soluciones estructuradas y escalables. Creo en el código escrito con paciencia, donde cada línea
+		tiene un propósito y cada sistema se construye con cuidado.
 	</p>
 </div>
