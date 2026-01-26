@@ -1,5 +1,6 @@
 <script lang="ts">
-	const technicalGroups: { category: string; skills: string[] }[] = [
+	import { _, locale } from 'svelte-i18n';
+	const hardSkills: { category: string; skills: string[] }[] = [
 		{
 			category: 'Frontend',
 			skills: ['Svelte', 'React', 'Vue', 'TypeScript', 'Tailwind CSS', 'HTML5', 'CSS3', 'Bootstrap']
@@ -14,23 +15,11 @@
 		}
 	];
 
-	const creativeSkills: { title: string; desc: string }[] = [
-		{
-			title: 'Arquitectura Modular',
-			desc: 'Organización del código en piezas independientes para facilitar su mantenimiento.'
-		},
-		{
-			title: 'Sostenibilidad y Revisión',
-			desc: 'Foco en la legibilidad y en la mejora constante para evitar deuda técnica.'
-		},
-		{
-			title: 'Resolución Metódica',
-			desc: 'Enfoque paso a paso para dividir problemas, apoyado en la documentación y la lógica.'
-		},
-		{
-			title: 'Mentalidad de Aprendizaje',
-			desc: 'Curiosidad constante y capacidad de investigar nuevas herramientas ante cada reto.'
-		}
+	const softSkills: string[] = [
+		'modular-architecture',
+		'sustainability-review',
+		'methodical-problem-solving',
+		'growth-mindset'
 	];
 </script>
 
@@ -42,7 +31,7 @@
 
 	<div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
 		<div class="space-y-12">
-			{#each technicalGroups as group}
+			{#each hardSkills as group}
 				<div>
 					<h3
 						class="mb-6 flex items-center gap-2 text-xs font-bold tracking-[0.2em] text-indigo-500 uppercase"
@@ -69,16 +58,20 @@
 				</h3>
 
 				<div class="space-y-8">
-					{#each creativeSkills as craft}
-						<div class="group">
-							<h4 class="text-xl font-light text-gray-700">
-								{craft.title}
-							</h4>
-							<p class="mt-1 text-sm leading-relaxed text-gray-500">
-								{craft.desc}
-							</p>
-						</div>
-					{/each}
+					{#if $locale}
+						{#each softSkills as skill}
+							<div class="group">
+								<h4 class="text-xl font-light text-gray-700">
+									{$_(`soft-skills.${skill}.title`)}
+								</h4>
+								<p class="mt-1 text-sm leading-relaxed text-gray-500">
+									{$_(`soft-skills.${skill}.desc`)}
+								</p>
+							</div>
+						{/each}
+					{:else}
+						<p>Loading...</p>
+					{/if}
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { _, locale } from 'svelte-i18n';
+
 	let y: number = $state(0);
 	let isScrolled: Boolean = $derived(y > 50);
 
@@ -14,13 +16,17 @@
 >
 	<div class="logo text-lg font-bold tracking-tighter uppercase">rexwithluv.dev</div>
 	<nav class="hidden space-x-9 md:flex">
-		{#each pages as page}
-			<a
-				href="#{page}"
-				class="text-sm font-normal capitalize transition-colors hover:text-indigo-500"
-			>
-				{page}
-			</a>
-		{/each}
+		{#if $locale}
+			{#each pages as page}
+				<a
+					href="#{$_(`navbar.${page}`)}"
+					class="text-sm font-normal transition-colors hover:text-indigo-500"
+				>
+					{$_(`navbar.${page}`)}
+				</a>
+			{/each}
+		{:else}
+			<p>Loading...</p>
+		{/if}
 	</nav>
 </div>

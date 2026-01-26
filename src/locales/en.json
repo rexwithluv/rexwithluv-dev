@@ -1,7 +1,45 @@
 {
+	"navbar": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"skills": "Skills",
+		"socials": "Socials"
+	},
+	"home": {
+		"title": "Building <br /> Digital Threads.",
+		"body": "I am <span class='font-semibold text-zinc-900'>Aarón</span>, a developer focused on creating structured and scalable solutions. I believe in code written with patience, where every line has a purpose and every system is built with care."
+	},
+	"about-me": {
+		"title": "About Me",
+		"path": "My journey in web development is defined by <span class='font-bold text-indigo-500'>self-reflection</span>. I constantly seek different perspectives to create code that is not only functional, but also sustainable, understandable, and practical, always following the best practices of every tool.",
+		"hobbies": "I am a <span class='font-bold text-indigo-500'>video game</span> enthusiast, an environment where I put my analytical and strategic thinking to the test. This facet allows me to train the planning and organization of complex systems in a dynamic and logical way.",
+		"crochet": "I complement this mindset with <span class='font-bold'>crochet</span>, a hobby that reminds me of the importance of patience and calm. I have learned that when the code is not on my side, the best way to maintain focus and <span class='font-bold italic'>perseverance</span> is to take a deep breath: great projects, much like weaving, are built calmly, stitch by stitch."
+	},
 	"projects": {
+		"title": "Projects",
 		"naga": "A management system designed to track FCT (vocational training internships).",
 		"mongo-verba": "A minimalist web application for collecting and managing personal quotes.",
-		"parking-vigo": "Real-time availability tracker for parking spaces across Vigo."
-	}
+		"parking-vigo": "Track real-time parking availability across Vigo."
+	},
+	"soft-skills": {
+		"modular-architecture": {
+			"title": "Modular Architecture",
+			"desc": "Organizing code into independent pieces to ensure easier maintenance and scalability."
+		},
+		"sustainability-review": {
+			"title": "Sustainability & Review",
+			"desc": "A focus on readability and continuous improvement to prevent technical debt."
+		},
+		"methodical-problem-solving": {
+			"title": "Methodical Problem Solving",
+			"desc": "A step-by-step approach to breaking down problems, backed by documentation and logic."
+		},
+		"growth-mindset": {
+			"title": "Growth Mindset",
+			"desc": "Constant curiosity and the ability to research and master new tools for every challenge."
+		}
+	},
+	"socials": "Socials",
+	"footer": "Designed with logic, woven with passion."
 }
