@@ -5,10 +5,16 @@
 
 	const projects: Project[] = [
 		{
+			name: 'ProyectoPokémon',
+			desc: 'proyecto-pokemon',
+			techStack: ['HTML5', 'CSS3', 'JavaScript'],
+			url: 'https://rexwithluv.dev/proyecto-pokemon'
+		},
+		{
 			name: 'NAGA-FCT',
 			desc: 'naga',
 			techStack: ['Spring Boot', 'Vue', 'TypeScript', 'MariaDB'],
-			url: 'https://rexwithluv.dev/naga-fct'
+			url: 'https://github.com/rexwithluv/naga-fct'
 		},
 		{
 			name: 'MongoVerba',

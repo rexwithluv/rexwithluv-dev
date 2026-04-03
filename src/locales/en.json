@@ -18,6 +18,7 @@
 	},
 	"projects": {
 		"title": "Projects",
+		"proyecto-pokemon": "One of my first web applications, built using the core stack for standard web development. Refactored years later with everything I've learned since.",
 		"naga": "A management system designed to track FCT (vocational training internships).",
 		"mongo-verba": "A minimalist web application for collecting and managing personal quotes.",
 		"parking-vigo": "Track real-time parking availability across Vigo."
