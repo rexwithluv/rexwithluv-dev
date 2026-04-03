@@ -20,7 +20,7 @@
 						{group.category}
 					</h3>
 					<div class="flex flex-wrap gap-x-6 gap-y-4">
-						{#each group.skills.sort() as skill}
+						{#each group.skills.toSorted() as skill}
 							<span class="text-xl font-light text-gray-700">{skill}</span>
 						{/each}
 					</div>
