@@ -1,0 +1,46 @@
+{
+    "navbar": {
+        "home": "Inicio",
+        "about": "Sobre min",
+        "projects": "Proxectos",
+        "skills": "Skills",
+        "socials": "Redes sociais"
+    },
+    "home": {
+        "title": "Building <br /> Digital Threads.",
+        "body": "Son <span class='font-semibold text-zinc-900'>Aarón</span>, desenvolvedor enfocado en crear solucións estruturadas e escalables. Creo no código escrito con paciencia, onde cada liña ten un propósito e cada sistema constrúese con coidado."
+    },
+    "about-me": {
+        "title": "Sobre min",
+        "path": "O meu camiño no desenvolvemento web está marcado pola <span class='font-bold text-indigo-500'>autocrítica</span>. Busco constantemente distintos puntos de vista para crear código que non só sexa funcional, senón tamén sostible, comprensible e práctico, seguindo sempre as mellores prácticas de cada ferramenta.",
+        "hobbies": "Son aficionado aos <span class='font-bold text-indigo-500'>videoxogos</span>, un entorno onde poño a proba o meu pensamento analítico e estratéxico. Esta faceta permíteme adestrar a planificación e a organización de sistemas complexos dunha forma dinámica e lóxica.",
+        "crochet": "Complemento esta mentalidade co <span class='font-bold'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me lembra a importancia da paciencia e a calma. Aprendín que cando o código non está do meu lado, a mellor forma de manter o foco e a <span class='font-bold italic'>perseveranza</span> é respirar fondo: os grandes proxectos, ao igual que o tecido, constrúense con calma, punto a punto."
+    },
+    "projects": {
+        "title": "Proxectos",
+        "proyecto-pokemon": "Unha das miñas primeiras aplicacións web, feita co stack base para o desenvolvemento web estándar. Refactorizada anos despois co aprendido.",
+        "naga": "Un sistema de xestión deseñado para realizar un seguimento das prácticas de formación profesional (FCT).",
+        "mongo-verba": "Unha web minimalista que almacena e mostra citas persoais.",
+        "parking-vigo": "Visualiza en tempo real o número de prazas dispoñibles nos diversos parkings de Vigo."
+    },
+    "soft-skills": {
+        "modular-architecture": {
+            "title": "Arquitectura Modular",
+            "desc": "Organización do código en pezas independentes para facilitar o seu mantemento."
+        },
+        "sustainability-review": {
+            "title": "Sostibilidade e Revisión",
+            "desc": "Foco na lexibilidade e na mellora constante para evitar débeda técnica."
+        },
+        "methodical-problem-solving": {
+            "title": "Resolución Metódica",
+            "desc": "Enfoque paso a paso para dividir problemas, apoiado na documentación e na lóxica."
+        },
+        "growth-mindset": {
+            "title": "Mentalidade de Aprendizaxe",
+            "desc": "Curiosidade constante e capacidade de investigar novas ferramentas ante cada reto."
+        }
+    },
+    "socials": "Redes sociais",
+    "footer": "Deseñado con lóxica, tecido con paixón."
+}
