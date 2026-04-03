@@ -22,7 +22,7 @@ const projects: Project[] = [
 	{
 		name: 'ParkingVigo',
 		desc: 'parking-vigo',
-		techStack: ['Svelte', 'TypeScript', 'TailwindCSS'],
+		techStack: ['Svelte', 'TypeScript', 'Tailwind CSS'],
 		url: 'https://rexwithluv.dev/parking-vigo'
 	}
 ];
