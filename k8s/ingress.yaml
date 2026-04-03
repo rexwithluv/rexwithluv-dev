@@ -10,20 +10,9 @@ metadata:
 spec:
   ingressClassName: traefik
   rules:
-    - host: 'rexwithluv.dev'
-      http:
+    - http:
         paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: service
-                port:
-                  number: 80
-    - host: 'www.rexwithluv.dev'
-      http:
-        paths:
-          - pathType: Prefix
+          - pathType: Exact
             path: /
             backend:
               service:
