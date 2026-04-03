@@ -18,6 +18,7 @@
 	},
 	"projects": {
 		"title": "Proyectos",
+		"proyecto-pokemon": "Una de mis primeras aplicaciones web, hecha con el stack base para el desarrollo web estándar. Refactorizada años después con lo aprendido.",
 		"naga": "Un sistema de gestión diseñado para realizar un seguimiento de las prácticas de formación profesional (FCT).",
 		"mongo-verba": "Una web minimalista que almacena y muestra citas personales.",
 		"parking-vigo": "Visualiza en tiempo real el número de plazas disponibles en los diversos parkings de Vigo."
