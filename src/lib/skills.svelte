@@ -20,8 +20,16 @@
 						{group.category}
 					</h3>
 					<div class="flex flex-wrap gap-x-6 gap-y-4">
-						{#each group.skills.toSorted() as skill}
-							<span class="text-xl font-light text-gray-700">{skill}</span>
+					{#each group.skills.toSorted((a, b) => a.name.localeCompare(b.name)) as skill}
+						<a
+							href={skill.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							class="text-xl font-light text-gray-700 hover:text-indigo-500 transition-colors"
+							title={`Learn more about ${skill.name}`}
+						>
+							{skill.name}
+						</a>
 						{/each}
 					</div>
 				</div>
