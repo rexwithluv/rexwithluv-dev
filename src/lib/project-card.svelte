@@ -21,7 +21,7 @@
 
 	<div class="flex flex-wrap gap-2">
 		{#each project.techStack as tech}
-			<span class="text-[10px] tracking-widest text-gray-400 uppercase group-hover:text-gray-600">
+			<span class="text-[10px] tracking-widest text-gray-400 uppercase group-hover:text-indigo-500">
 				{tech}
 			</span>
 		{/each}

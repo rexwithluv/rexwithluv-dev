@@ -14,7 +14,7 @@
 		"title": "About Me",
 		"path": "My journey in web development is defined by <span class='font-bold text-indigo-500'>self-reflection</span>. I constantly seek different perspectives to create code that is not only functional, but also sustainable, understandable, and practical, always following the best practices of every tool.",
 		"hobbies": "I am a <span class='font-bold text-indigo-500'>video game</span> enthusiast, an environment where I put my analytical and strategic thinking to the test. This facet allows me to train the planning and organization of complex systems in a dynamic and logical way.",
-		"crochet": "I complement this mindset with <span class='font-bold'>crochet</span>, a hobby that reminds me of the importance of patience and calm. I have learned that when the code is not on my side, the best way to maintain focus and <span class='font-bold italic'>perseverance</span> is to take a deep breath: great projects, much like weaving, are built calmly, stitch by stitch."
+		"crochet": "I complement this mindset with <span class='font-bold text-indigo-500'>crochet</span>, a hobby that reminds me of the importance of patience and calm. I have learned that when the code is not on my side, the best way to maintain focus and <span class='font-bold italic text-indigo-500'>perseverance</span> is to take a deep breath: great projects, much like weaving, are built calmly, stitch by stitch."
 	},
 	"projects": {
 		"title": "Projects",
