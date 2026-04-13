@@ -23,7 +23,7 @@
 		? 'bg-white/80 py-4 shadow-sm backdrop-blur-md'
 		: 'bg-transparent py-6'}"
 >
-	<div class="logo text-lg font-bold tracking-tighter uppercase">rexwithluv.dev</div>
+	<div class="logo text-lg font-bold tracking-tighter uppercase"><a href="#home">rexwithluv.dev</a></div>
 	<nav class="hidden space-x-9 md:flex">
 		{#if $locale}
 			{#each pages as page}
