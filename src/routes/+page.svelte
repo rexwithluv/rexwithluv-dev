@@ -8,7 +8,7 @@
 	import Socials from '$lib/socials.svelte';
 </script>
 
-<div class="bg-zinc-50 text-zinc-900">
+<div class="portfolio-page text-zinc-900">
 	<Navbar />
 
 	<Home />

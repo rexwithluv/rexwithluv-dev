@@ -20,7 +20,7 @@
 
 <div
 	class="fixed top-0 z-[1000] flex w-full items-center justify-between px-[10%] transition-all duration-500 ease-in-out {isScrolled
-		? 'bg-white/80 py-4 shadow-sm backdrop-blur-md'
+		? 'bg-indigo-200/70 py-4 shadow-sm backdrop-blur-md'
 		: 'bg-transparent py-6'}"
 >
 	<div class="logo text-lg font-bold tracking-tighter uppercase"><a href="#home">rexwithluv.dev</a></div>

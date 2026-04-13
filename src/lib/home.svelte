@@ -4,7 +4,7 @@
 
 <div
 	id="home"
-	class="flex min-h-screen scroll-mt-20 flex-col justify-center bg-gradient-to-br from-zinc-50 via-indigo-300 to-zinc-50 px-[10%]"
+	class="flex min-h-screen scroll-mt-20 flex-col justify-center px-[10%]"
 >
 	{#if $locale}
 		<h1 class="mb-5 text-5xl leading-[1.1] font-bold md:text-8xl">
