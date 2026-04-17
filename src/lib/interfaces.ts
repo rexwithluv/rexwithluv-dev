@@ -9,3 +9,8 @@ export interface SocialNetwork {
 	name: string;
 	url: string;
 }
+
+export interface Skill {
+	name: string;
+	url: string;
+}

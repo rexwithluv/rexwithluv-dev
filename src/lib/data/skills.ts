@@ -1,7 +1,4 @@
-interface Skill {
-	name:string,
-	url:string,
-}
+import { type Skill } from '../interfaces';
 
 const hardSkills: { category: string; skills: Skill[] }[] = [
 	{

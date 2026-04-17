@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { _, locale } from 'svelte-i18n';
 	import ProjectCard from './project-card.svelte';
-	import projects from './projects';
+	import projects from './data/projects';
 </script>
 
 <div id="projects" class="reveal flex min-h-[80vh] scroll-mt-20 flex-col justify-center px-[10%]">

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { _, locale } from 'svelte-i18n';
-	import { hardSkills, softSkills } from './skills';
+	import { hardSkills, softSkills } from './data/skills';
 </script>
 
 <div
