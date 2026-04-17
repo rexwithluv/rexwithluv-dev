@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { _, locale } from 'svelte-i18n';
-	import socials from './socials';
+	import socials from './data/socials';
 </script>
 
 <div id="socials" class="reveal flex min-h-[50vh] scroll-mt-20 flex-col justify-center px-[10%]">

@@ -14,7 +14,7 @@
 		"title": "Sobre min",
 		"path": "O meu camiño no desenvolvemento web está marcado pola <span class='font-bold text-indigo-500'>autocrítica</span>. Busco constantemente distintos puntos de vista para crear código que non só sexa funcional, senón tamén sostible, comprensible e práctico, seguindo sempre as mellores prácticas de cada ferramenta.",
 		"hobbies": "Son aficionado aos <span class='font-bold text-indigo-500'>videoxogos</span>, un entorno onde poño a proba o meu pensamento analítico e estratéxico. Esta faceta permíteme adestrar a planificación e a organización de sistemas complexos dunha forma dinámica e lóxica.",
-		"crochet": "Complemento esta mentalidade co <span class='font-bold'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me lembra a importancia da paciencia e a calma. Aprendín que cando o código non está do meu lado, a mellor forma de manter o foco e a <span class='font-bold italic'>perseveranza</span> é respirar fondo: os grandes proxectos, ao igual que o tecido, constrúense con calma, punto a punto."
+		"crochet": "Complemento esta mentalidade co <span class='font-bold text-indigo-500'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me lembra a importancia da paciencia e a calma. Aprendín que cando o código non está do meu lado, a mellor forma de manter o foco e a <span class='font-bold italic text-indigo-500'>perseveranza</span> é respirar fondo: os grandes proxectos, ao igual que o tecido, constrúense con calma, punto a punto."
 	},
 	"projects": {
 		"title": "Proxectos",
@@ -41,6 +41,7 @@
 			"desc": "Curiosidade constante e capacidade de investigar novas ferramentas ante cada reto."
 		}
 	},
+	"learn-more": "Aprende máis sobre...",
 	"socials": "Redes sociais",
 	"footer": "Deseñado con lóxica, tecido con paixón."
 }

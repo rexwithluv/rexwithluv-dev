@@ -1,4 +1,4 @@
-import type { SocialNetwork } from './interfaces';
+import type { SocialNetwork } from '../interfaces';
 
 const socials: SocialNetwork[] = [
 	{ name: 'github', url: 'https://github.com/rexwithluv' },

@@ -8,13 +8,13 @@
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
-		"body": "Soy  <span class='font-semibold text-zinc-900'>Aarón</span>, desarrollador enfocado en crear soluciones estructuradas y escalables. Creo en el código escrito con paciencia, donde cada línea tiene un propósito y cada sistema se construye con cuidado."
+		"body": "Soy <span class='font-semibold text-zinc-900'>Aarón</span>, desarrollador enfocado en crear soluciones estructuradas y escalables. Creo en el código escrito con paciencia, donde cada línea tiene un propósito y cada sistema se construye con cuidado."
 	},
 	"about-me": {
 		"title": "Sobre mí",
 		"path": "Mi camino en el desarrollo web está marcado por la <span class='font-bold text-indigo-500'>autocrítica</span>. Busco constantemente distintos puntos de vista para crear código que no solo sea funcional, sino también sostenible, comprensible y práctico, siguiendo siempre las mejores prácticas de cada herramienta.",
 		"hobbies": "Soy aficionado a los <span class='font-bold text-indigo-500'>videojuegos</span>, un entorno donde pongo a prueba mi pensamiento analítico y estratégico. Esta faceta me permite entrenar la planificación y la organización de sistemas complejos de una forma dinámica y lógica.",
-		"crochet": "Complemento esta mentalidad con el <span class='font-bold'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me recuerda la importancia de la paciencia y la calma. He aprendido que cuando el código no está de mi lado, la mejor forma de mantener el foco y la <span class='font-bold italic'>perseverancia</span> es respirar hondo: los grandes proyectos, al igual que el tejido, se construyen con calma, punto a punto."
+		"crochet": "Complemento esta mentalidad con el <span class='font-bold text-indigo-500'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me recuerda la importancia de la paciencia y la calma. He aprendido que cuando el código no está de mi lado, la mejor forma de mantener el foco y la <span class='font-bold text-indigo-500 italic'>perseverancia</span> es respirar hondo: los grandes proyectos, al igual que el tejido, se construyen con calma, punto a punto."
 	},
 	"projects": {
 		"title": "Proyectos",
@@ -41,6 +41,7 @@
 			"desc": "Curiosidad constante y capacidad de investigar nuevas herramientas ante cada reto."
 		}
 	},
+	"learn-more": "Aprende más sobre...",
 	"socials": "Redes sociales",
 	"footer": "Diseñado con lógica, tejido con pasión."
 }
