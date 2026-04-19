@@ -26,7 +26,7 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								class="text-xl font-light text-gray-700 transition-colors hover:text-indigo-500"
-								title={`${$_('learn-more')} ${skill.name}`}
+								title={$_('learn-more', { values: { skill: skill.name } })}
 							>
 								{skill.name}
 							</a>

@@ -41,7 +41,7 @@
 			"desc": "Curiosidad constante y capacidad de investigar nuevas herramientas ante cada reto."
 		}
 	},
-	"learn-more": "Aprende más sobre...",
+	"learn-more": "Aprende más sobre {skill}",
 	"socials": "Redes sociales",
 	"footer": "Diseñado con lógica, tejido con pasión."
 }
