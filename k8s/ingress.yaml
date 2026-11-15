@@ -6,11 +6,21 @@ metadata:
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: websecure
     traefik.ingress.kubernetes.io/router.tls: 'true'
-    traefik.ingress.kubernetes.io/router.middlewares: rexwithluv-dev-strip-prefix@kubernetescrd
 spec:
   ingressClassName: traefik
   rules:
-    - http:
+    - host: rexwithluv.dev
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: service
+                port:
+                  number: 80
+    - host: www.rexwithluv.dev
+      http:
         paths:
           - pathType: Prefix
             path: /
