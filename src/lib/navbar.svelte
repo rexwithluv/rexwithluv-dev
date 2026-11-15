@@ -105,13 +105,13 @@
 
 	<button
 		bind:this={menuButton}
-		class="border border-ink px-2 py-1 text-xs lg:hidden"
+		class="cursor-pointer border border-ink px-2 py-1 text-xs transition-colors hover:bg-ink hover:text-paper lg:hidden"
 		onclick={() => (menuOpen = !menuOpen)}
 		aria-label={$_('ui.menu')}
 		aria-expanded={menuOpen}
 		aria-controls="main-nav"
 	>
-		<span aria-hidden="true">{menuOpen ? '[x]' : '[menu]'}</span>
+		<span aria-hidden="true">{menuOpen ? '[x]' : `[${$_('ui.menu')}]`}</span>
 	</button>
 
 	<nav
