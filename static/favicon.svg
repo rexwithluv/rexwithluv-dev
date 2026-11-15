@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<!--
+		rexwithluv.dev favicon: "r_" + rainbow band.
+		Colours are copied from src/routes/layout.css (favicons can't read CSS variables):
+		keep them in sync if the palette changes.
+		Light browser theme -> dark tile; dark browser theme -> paper tile.
+	-->
+	<style>
+		.on-dark { display: none; }
+		@media (prefers-color-scheme: dark) {
+			.on-light { display: none; }
+			.on-dark { display: inline; }
+		}
+	</style>
+	<defs>
+		<clipPath id="tile-light"><rect width="32" height="32" rx="6" /></clipPath>
+		<clipPath id="tile-dark"><rect x="1" y="1" width="30" height="30" rx="5" /></clipPath>
+		<g id="band">
+			<rect x="0" y="25" width="5.4" height="7" fill="#b13027" />
+			<rect x="5.34" y="25" width="5.4" height="7" fill="#e8762a" />
+			<rect x="10.68" y="25" width="5.4" height="7" fill="#e6b02a" />
+			<rect x="16.02" y="25" width="5.4" height="7" fill="#366c29" />
+			<rect x="21.36" y="25" width="5.4" height="7" fill="#2961a1" />
+			<rect x="26.7" y="25" width="5.4" height="7" fill="#7b3f9e" />
+		</g>
+	</defs>
+
+	<g class="on-light">
+		<rect width="32" height="32" rx="6" fill="#2a2019" />
+		<use href="#band" clip-path="url(#tile-light)" />
+		<path d="M7 5h12v6h-4v-2h-4v12H7z" fill="#f6eee1" />
+		<rect x="20" y="18" width="6" height="3.5" fill="#e6b02a" />
+	</g>
+
+	<g class="on-dark">
+		<rect x="1" y="1" width="30" height="30" rx="5" fill="#f6eee1" />
+		<use href="#band" clip-path="url(#tile-dark)" />
+		<rect x="1" y="1" width="30" height="30" rx="5" fill="none" stroke="#2a2019" stroke-width="2" />
+		<path d="M7 5h12v6h-4v-2h-4v12H7z" fill="#2a2019" />
+		<rect x="20" y="18" width="6" height="3.5" fill="#e6b02a" />
+	</g>
+</svg>

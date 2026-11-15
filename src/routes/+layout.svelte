@@ -20,7 +20,9 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" type="image/png" href={asset('/icon.png')} />
+	<link rel="icon" type="image/png" sizes="32x32" href={asset('/favicon-32.png')} />
+	<link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+	<link rel="apple-touch-icon" href={asset('/apple-touch-icon.png')} />
 </svelte:head>
 
 <div data-color={color} class="flex min-h-dvh flex-col">
