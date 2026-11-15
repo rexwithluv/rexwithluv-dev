@@ -43,6 +43,11 @@
 		}
 	},
 	"learn-more": "Learn more about {skill}",
+	"skill-categories": {
+		"frontend": "Frontend",
+		"backend": "Backend",
+		"infrastructure": "Infrastructure and Tools"
+	},
 	"socials": "Socials",
 	"footer": "Designed with",
 	"ui": {

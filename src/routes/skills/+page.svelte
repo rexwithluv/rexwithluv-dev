@@ -15,7 +15,7 @@
 	<div class="space-y-10">
 		{#each hardSkills as group}
 			<section>
-				<h2 class="eyebrow mb-4">{group.category}</h2>
+				<h2 class="eyebrow mb-4">{$_(`skill-categories.${group.category}`)}</h2>
 				<ul class="flex flex-wrap gap-2.5">
 					{#each group.skills.toSorted((a, b) => a.name.localeCompare(b.name)) as skill}
 						<li>
@@ -36,7 +36,7 @@
 	</div>
 
 	<section class="card self-start p-6 md:p-8">
-		<h2 class="eyebrow mb-6">soft skills</h2>
+		<h2 class="eyebrow mb-6" lang="en">soft skills</h2>
 		<ol class="space-y-6">
 			{#each softSkills as skill, i}
 				<li class="grid grid-cols-[2rem_1fr] gap-2">

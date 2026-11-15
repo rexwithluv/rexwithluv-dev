@@ -2,7 +2,7 @@ import { type Skill } from '../interfaces';
 
 const hardSkills: { category: string; skills: Skill[] }[] = [
 	{
-		category: 'Frontend',
+		category: 'frontend',
 		skills: [
 			{ name: 'Svelte', url: 'https://svelte.dev' },
 			{ name: 'React', url: 'https://react.dev' },
@@ -15,7 +15,7 @@ const hardSkills: { category: string; skills: Skill[] }[] = [
 		]
 	},
 	{
-		category: 'Backend',
+		category: 'backend',
 		skills: [
 			{ name: 'Node.js', url: 'https://nodejs.org' },
 			{ name: 'Spring Boot', url: 'https://spring.io/projects/spring-boot' },
@@ -24,7 +24,7 @@ const hardSkills: { category: string; skills: Skill[] }[] = [
 		]
 	},
 	{
-		category: 'Infraestructura / Herramientas',
+		category: 'infrastructure',
 		skills: [
 			{ name: 'Docker', url: 'https://www.docker.com' },
 			{ name: 'Linux', url: 'https://www.linux.org' },
