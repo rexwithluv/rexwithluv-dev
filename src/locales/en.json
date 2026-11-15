@@ -8,13 +8,13 @@
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
-		"body": "I am <span class='font-semibold text-zinc-900'>Aarón</span>, a developer focused on creating structured and scalable solutions. I believe in code written with patience, where every line has a purpose and every system is built with care."
+		"body": "I am <strong>Aarón</strong>, a developer focused on creating structured and scalable solutions. I believe in code written with patience, where every line has a purpose and every system is built with care."
 	},
 	"about-me": {
 		"title": "About Me",
-		"path": "My journey in web development is defined by <span class='font-bold text-indigo-500'>self-reflection</span>. I constantly seek different perspectives to create code that is not only functional, but also sustainable, understandable, and practical, always following the best practices of every tool.",
-		"hobbies": "I am a <span class='font-bold text-indigo-500'>video game</span> enthusiast, an environment where I put my analytical and strategic thinking to the test. This facet allows me to train the planning and organization of complex systems in a dynamic and logical way.",
-		"crochet": "I complement this mindset with <span class='font-bold text-indigo-500'>crochet</span>, a hobby that reminds me of the importance of patience and calm. I have learned that when the code is not on my side, the best way to maintain focus and <span class='font-bold italic text-indigo-500'>perseverance</span> is to take a deep breath: great projects, much like weaving, are built calmly, stitch by stitch."
+		"path": "My journey in web development is defined by <strong>self-reflection</strong>. I constantly seek different perspectives to create code that is not only functional, but also sustainable, understandable, and practical, always following the best practices of every tool.",
+		"hobbies": "I am a <strong>video game</strong> enthusiast, an environment where I put my analytical and strategic thinking to the test. This facet allows me to train the planning and organization of complex systems in a dynamic and logical way.",
+		"crochet": "I complement this mindset with <strong>crochet</strong>, a hobby that reminds me of the importance of patience and calm. I have learned that when the code is not on my side, the best way to maintain focus and <strong><em>perseverance</em></strong> is to take a deep breath: great projects, much like weaving, are built calmly, stitch by stitch."
 	},
 	"projects": {
 		"title": "Projects",
@@ -43,5 +43,14 @@
 	},
 	"learn-more": "Learn more about {skill}",
 	"socials": "Socials",
-	"footer": "Designed with logic, woven with passion."
+	"footer": "Designed with logic, woven with passion.",
+	"ui": {
+		"index": "index",
+		"next": "next"
+	},
+	"not-found": {
+		"title": "Nothing here",
+		"body": "This page slipped off the yarn ball.",
+		"back": "back home"
+	}
 }

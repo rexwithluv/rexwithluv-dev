@@ -1,29 +1,35 @@
 <script lang="ts">
 	import type { Project } from './interfaces';
 
-	let { project }: { project: Project } = $props();
+	let { project, index }: { project: Project; index: number } = $props();
+
+	const host = $derived(
+		new URL(project.url).host + new URL(project.url).pathname.replace(/\/$/, '')
+	);
 </script>
 
 <a
 	href={project.url}
 	target="_blank"
-	class="group flex flex-col border-b border-gray-300 pb-8 transition-all duration-500 hover:border-indigo-500"
+	rel="noopener noreferrer"
+	class="card group flex flex-col p-6"
 >
-	<h3
-		class="mb-3 text-2xl font-bold tracking-tight transition-transform duration-300 group-hover:translate-x-1"
-	>
-		{project.name}
-	</h3>
+	<div class="mb-6 flex items-center justify-between text-xs text-ink-soft">
+		<span>[{String(index + 1).padStart(2, '0')}]</span>
+		<span class="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+			>↗</span
+		>
+	</div>
 
-	<p class="mb-6 flex-grow text-lg leading-relaxed text-gray-600">
-		{project.desc}
-	</p>
+	<h2 class="mb-3 font-display text-2xl font-bold tracking-tight">{project.name}</h2>
 
-	<div class="flex flex-wrap gap-2">
+	<p class="mb-6 flex-grow text-sm leading-relaxed text-ink-soft">{project.desc}</p>
+
+	<p class="accent mb-4 truncate text-xs">{host}</p>
+
+	<div class="flex flex-wrap gap-1.5">
 		{#each project.techStack as tech}
-			<span class="text-[10px] tracking-widest text-gray-400 uppercase group-hover:text-indigo-500">
-				{tech}
-			</span>
+			<span class="tag">{tech.toLowerCase()}</span>
 		{/each}
 	</div>
 </a>

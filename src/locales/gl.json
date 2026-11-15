@@ -8,13 +8,13 @@
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
-		"body": "Son <span class='font-semibold text-zinc-900'>Aarón</span>, desenvolvedor enfocado en crear solucións estruturadas e escalables. Creo no código escrito con paciencia, onde cada liña ten un propósito e cada sistema constrúese con coidado."
+		"body": "Son <strong>Aarón</strong>, desenvolvedor enfocado en crear solucións estruturadas e escalables. Creo no código escrito con paciencia, onde cada liña ten un propósito e cada sistema constrúese con coidado."
 	},
 	"about-me": {
 		"title": "Sobre min",
-		"path": "O meu camiño no desenvolvemento web está marcado pola <span class='font-bold text-indigo-500'>autocrítica</span>. Busco constantemente distintos puntos de vista para crear código que non só sexa funcional, senón tamén sostible, comprensible e práctico, seguindo sempre as mellores prácticas de cada ferramenta.",
-		"hobbies": "Son aficionado aos <span class='font-bold text-indigo-500'>videoxogos</span>, un entorno onde poño a proba o meu pensamento analítico e estratéxico. Esta faceta permíteme adestrar a planificación e a organización de sistemas complexos dunha forma dinámica e lóxica.",
-		"crochet": "Complemento esta mentalidade co <span class='font-bold text-indigo-500'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me lembra a importancia da paciencia e a calma. Aprendín que cando o código non está do meu lado, a mellor forma de manter o foco e a <span class='font-bold italic text-indigo-500'>perseveranza</span> é respirar fondo: os grandes proxectos, ao igual que o tecido, constrúense con calma, punto a punto."
+		"path": "O meu camiño no desenvolvemento web está marcado pola <strong>autocrítica</strong>. Busco constantemente distintos puntos de vista para crear código que non só sexa funcional, senón tamén sostible, comprensible e práctico, seguindo sempre as mellores prácticas de cada ferramenta.",
+		"hobbies": "Son aficionado aos <strong>videoxogos</strong>, un entorno onde poño a proba o meu pensamento analítico e estratéxico. Esta faceta permíteme adestrar a planificación e a organización de sistemas complexos dunha forma dinámica e lóxica.",
+		"crochet": "Complemento esta mentalidade co <strong>ganchillo <em>(crochet)</em></strong>, un hobby que me lembra a importancia da paciencia e a calma. Aprendín que cando o código non está do meu lado, a mellor forma de manter o foco e a <strong><em>perseveranza</em></strong> é respirar fondo: os grandes proxectos, ao igual que o tecido, constrúense con calma, punto a punto."
 	},
 	"projects": {
 		"title": "Proxectos",
@@ -43,5 +43,14 @@
 	},
 	"learn-more": "Aprende máis sobre {skill}",
 	"socials": "Redes sociais",
-	"footer": "Deseñado con lóxica, tecido con paixón."
+	"footer": "Deseñado con lóxica, tecido con paixón.",
+	"ui": {
+		"index": "índice",
+		"next": "seguinte"
+	},
+	"not-found": {
+		"title": "Aquí non hai nada",
+		"body": "Esta páxina soltouse do noveló.",
+		"back": "volver ao inicio"
+	}
 }
