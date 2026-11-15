@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>skills · rexwithluv.dev</title>
+	<title>{$_('navbar.skills')} · rexwithluv.dev</title>
 </svelte:head>
 
 <PageHeader index={3} title={$_('navbar.skills')} />

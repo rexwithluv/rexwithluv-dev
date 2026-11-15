@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>{$_('projects.title').toLowerCase()} · rexwithluv.dev</title>
+	<title>{$_('projects.title')} · rexwithluv.dev</title>
 </svelte:head>
 
 <PageHeader index={2} title={$_('projects.title')} />
