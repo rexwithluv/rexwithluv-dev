@@ -10,7 +10,7 @@
 	<title>{$_('projects.title')} · rexwithluv.dev</title>
 </svelte:head>
 
-<PageHeader index={2} title={$_('projects.title')} />
+<PageHeader title={$_('projects.title')} />
 
 <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
 	{#each projects as project, i}

@@ -10,7 +10,7 @@
 	<title>{$_('about-me.title')} · rexwithluv.dev</title>
 </svelte:head>
 
-<PageHeader index={1} title={$_('about-me.title')} />
+<PageHeader title={$_('about-me.title')} />
 
 <div class="grid gap-10 md:grid-cols-[10rem_1fr]">
 	{#each paragraphs as key, i}

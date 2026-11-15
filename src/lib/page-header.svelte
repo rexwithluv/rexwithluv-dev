@@ -1,5 +1,10 @@
 <script lang="ts">
-	let { index, title }: { index: number; title: string } = $props();
+	import { page } from '$app/state';
+	import sections, { sectionFor } from './data/sections';
+
+	let { title }: { title: string } = $props();
+
+	const index = $derived(sections.indexOf(sectionFor(page.url.pathname)!));
 </script>
 
 <header class="mb-14 md:mb-20">

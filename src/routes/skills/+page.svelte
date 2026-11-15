@@ -9,7 +9,7 @@
 	<title>{$_('navbar.skills')} · rexwithluv.dev</title>
 </svelte:head>
 
-<PageHeader index={3} title={$_('navbar.skills')} />
+<PageHeader title={$_('navbar.skills')} />
 
 <div class="grid gap-16 lg:grid-cols-[1.2fr_1fr]">
 	<div class="space-y-10">

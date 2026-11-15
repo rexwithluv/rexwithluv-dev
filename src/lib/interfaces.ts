@@ -15,6 +15,15 @@ export interface Skill {
 	url: string;
 }
 
+export interface Version {
+	id: string;
+	name?: string;
+	from: string;
+	to?: string;
+	tag: string;
+	url?: string;
+}
+
 export type RainbowColor = 'red' | 'orange' | 'yellow' | 'green' | 'blue' | 'violet';
 
 export interface Section {

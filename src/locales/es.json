@@ -4,7 +4,8 @@
 		"about-me": "Sobre mí",
 		"projects": "Proyectos",
 		"skills": "Skills",
-		"socials": "Redes sociales"
+		"socials": "Redes sociales",
+		"archive": "Archivo"
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
@@ -63,6 +64,16 @@
 		"title": "Aquí no hay nada",
 		"body": "Esta página se ha soltado del ovillo.",
 		"back": "volver al inicio"
+	},
+	"archive": {
+		"intro": "Las versiones anteriores de este portfolio no se borran, se quedan congeladas tal como eran.",
+		"live": "estás aquí",
+		"visit": "visitar",
+		"code": "código fuente",
+		"now": "hoy",
+		"v2": "Rediseño desde cero: estética de terminal, un color por sección y accesibilidad WCAG 2.2 AA.",
+		"v1": "La primera versión completa: SvelteKit, Tailwind e i18n en tres idiomas, con fondo degradado.",
+		"v0": "Prototipo con barra lateral e integración con la API de GitHub. Se reinició en enero de 2026."
 	},
 	"footer-heart": "amor",
 	"footer-by": "por"
