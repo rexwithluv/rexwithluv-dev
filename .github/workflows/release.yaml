@@ -105,7 +105,48 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            APP_VERSION=${{ needs.release.outputs.version }}
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  # Apunta k8s/deployment.yaml a la imagen recién publicada. El push con
+  # GITHUB_TOKEN no vuelve a lanzar workflows, y al ser chore no saca versión.
+  bump-k8s:
+    needs: [release, docker]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - name: Update image tag
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+          IMAGE: ghcr.io/${{ github.repository }}
+        run: |
+          sed -i -E "s|(image: ${IMAGE}):[^[:space:]]+|\1:${VERSION}|" k8s/deployment.yaml
+          grep -q "image: ${IMAGE}:${VERSION}$" k8s/deployment.yaml || {
+            echo "No se encontró la línea image en k8s/deployment.yaml" >&2
+            exit 1
+          }
+
+      - name: Commit and push
+        env:
+          VERSION: ${{ needs.release.outputs.version }}
+        run: |
+          if git diff --quiet; then
+            echo "k8s ya apunta a ${VERSION}"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore(k8s): deploy image ${VERSION}"
+          git pull --rebase origin main
+          git push origin HEAD:main
