@@ -4,7 +4,8 @@
 		"about-me": "About Me",
 		"projects": "Projects",
 		"skills": "Skills",
-		"socials": "Socials"
+		"socials": "Socials",
+		"archive": "Archive"
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
@@ -43,6 +44,11 @@
 		}
 	},
 	"learn-more": "Learn more about {skill}",
+	"skill-categories": {
+		"frontend": "Frontend",
+		"backend": "Backend",
+		"infrastructure": "Infrastructure and Tools"
+	},
 	"socials": "Socials",
 	"footer": "Designed with",
 	"ui": {
@@ -58,6 +64,16 @@
 		"title": "Nothing here",
 		"body": "This page slipped off the yarn ball.",
 		"back": "back home"
+	},
+	"archive": {
+		"intro": "Old versions of this portfolio are not deleted, they stay frozen as they were.",
+		"live": "you are here",
+		"visit": "visit",
+		"code": "source code",
+		"now": "now",
+		"v2": "Redesign from scratch: terminal look, one colour per section and WCAG 2.2 AA accessibility.",
+		"v1": "The first complete version: SvelteKit, Tailwind and i18n in three languages, with a gradient background.",
+		"v0": "Prototype with a sidebar and GitHub API integration. Restarted in January 2026."
 	},
 	"footer-heart": "love",
 	"footer-by": "by"

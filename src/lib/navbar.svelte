@@ -69,7 +69,7 @@
 <svelte:window onkeydown={onKeydown} onclick={onClick} />
 
 <div class="flex h-2 w-full" aria-hidden="true">
-	{#each [...sections.map((s) => s.color), 'violet'] as color, i}
+	{#each sections as { color }}
 		<span
 			class="flex-1 transition-[flex-grow] duration-500"
 			style="background: var(--color-{color}); flex-grow: {current?.color === color ? 3 : 1}"
@@ -78,7 +78,7 @@
 </div>
 
 <header
-	class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-5 py-5 md:gap-4 md:px-10"
+	class="mx-auto flex w-full max-w-6xl items-center justify-between gap-2 px-5 py-5 md:gap-4 md:px-10"
 >
 	<div class="flex items-center">
 		<a href={href(sections[0])} class="py-1 text-xs font-medium whitespace-nowrap md:text-sm">
@@ -103,44 +103,46 @@
 		</button>
 	</div>
 
-	<button
-		bind:this={menuButton}
-		class="border border-ink px-2 py-1 text-xs lg:hidden"
-		onclick={() => (menuOpen = !menuOpen)}
-		aria-label={$_('ui.menu')}
-		aria-expanded={menuOpen}
-		aria-controls="main-nav"
-	>
-		<span aria-hidden="true">{menuOpen ? '[x]' : '[menu]'}</span>
-	</button>
+	<div class="flex items-center gap-1">
+		<button
+			bind:this={menuButton}
+			class="cursor-pointer border border-ink px-2 py-1 text-xs transition-colors hover:bg-ink hover:text-paper xl:hidden"
+			onclick={() => (menuOpen = !menuOpen)}
+			aria-label={$_('ui.menu')}
+			aria-expanded={menuOpen}
+			aria-controls="main-nav"
+		>
+			<span aria-hidden="true">{menuOpen ? '[x]' : `[${$_('ui.menu')}]`}</span>
+		</button>
 
-	<nav
-		bind:this={nav}
-		onfocusout={onNavFocusOut}
-		id="main-nav"
-		aria-label={$_('ui.main-nav')}
-		class="{menuOpen
-			? 'flex'
-			: 'hidden'} absolute top-20 right-5 left-5 z-50 flex-col gap-1 border border-ink bg-paper p-3 shadow-[5px_5px_0_0_var(--accent-deco)] lg:static lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
-	>
-		{#each sections as section, i}
-			{@const active = current?.id === section.id}
-			<a
-				href={href(section)}
-				data-color={section.color}
-				aria-current={active ? 'page' : undefined}
-				class="group px-2.5 py-1.5 text-sm transition-colors {active
-					? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
-					: 'hover:bg-[var(--accent-soft)]'}"
-			>
-				<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
-					>{String(i).padStart(2, '0')}</span
+		<nav
+			bind:this={nav}
+			onfocusout={onNavFocusOut}
+			id="main-nav"
+			aria-label={$_('ui.main-nav')}
+			class="{menuOpen
+				? 'flex'
+				: 'hidden'} absolute top-20 right-5 left-5 z-50 flex-col gap-1 border border-ink bg-paper p-3 shadow-[5px_5px_0_0_var(--accent-deco)] xl:static xl:flex xl:flex-row xl:items-center xl:gap-1 xl:border-0 xl:bg-transparent xl:p-0 xl:shadow-none"
+		>
+			{#each sections as section, i}
+				{@const active = current?.id === section.id}
+				<a
+					href={href(section)}
+					data-color={section.color}
+					aria-current={active ? 'page' : undefined}
+					class="group px-2.5 py-1.5 text-sm transition-colors {active
+						? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
+						: 'hover:bg-[var(--accent-soft)]'}"
 				>
-				{$_(`navbar.${section.id}`).toLowerCase()}
-			</a>
-		{/each}
+					<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
+						>{String(i).padStart(2, '0')}</span
+					>
+					{$_(`navbar.${section.id}`).toLowerCase()}
+				</a>
+			{/each}
+		</nav>
 
-		<div class="relative lg:ml-3" bind:this={langBox}>
+		<div class="relative xl:ml-3" bind:this={langBox}>
 			<button
 				bind:this={langButton}
 				onclick={() => (langOpen = !langOpen)}
@@ -175,5 +177,5 @@
 				</ul>
 			{/if}
 		</div>
-	</nav>
+	</div>
 </header>

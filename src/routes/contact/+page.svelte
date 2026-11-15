@@ -1,16 +1,17 @@
 <script lang="ts">
 	import { _ } from 'svelte-i18n';
 	import socials from '$lib/data/socials';
+	import NextPage from '$lib/next-page.svelte';
 	import PageHeader from '$lib/page-header.svelte';
 
 	const label = (url: string) => url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 </script>
 
 <svelte:head>
-	<title>{$_('socials').toLowerCase()} · rexwithluv.dev</title>
+	<title>{$_('socials')} · rexwithluv.dev</title>
 </svelte:head>
 
-<PageHeader index={4} title={$_('socials')} />
+<PageHeader title={$_('socials')} />
 
 <ul class="border-t-[1.5px] border-ink">
 	{#each socials as link}
@@ -33,3 +34,5 @@
 		</li>
 	{/each}
 </ul>
+
+<NextPage />
