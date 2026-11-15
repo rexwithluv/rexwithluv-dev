@@ -29,8 +29,11 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          # Versiones fijadas: conventionalcommits@10 necesita un writer que
+          # semantic-release todavía no trae
+          semantic_version: 24
           extra_plugins: |
-            conventional-changelog-conventionalcommits
+            conventional-changelog-conventionalcommits@9
 
   docker:
     needs: release
