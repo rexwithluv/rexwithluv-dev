@@ -26,7 +26,7 @@ Rediseño completo desde cero. Es la versión que se sirve en `/`.
 - Accesibilidad según **WCAG 2.2 AA**: contraste, navegación por teclado, gestión del foco y textos en otros idiomas marcados con `lang`.
 - Modo claro y oscuro, también en el favicon `r_` (en curso).
 
-### v1 · congelada el 15/11/2026
+### v1 · _indigo_ (congelada el 15/11/2026)
 
 Desarrollada entre enero y abril de 2026, tras reiniciar el proyecto. Se sirve en [`/v1`](https://rexwithluv.dev/v1).
 
