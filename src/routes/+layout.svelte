@@ -6,11 +6,14 @@
 	import { sectionFor } from '$lib/data/sections';
 	import Footer from '$lib/footer.svelte';
 	import Navbar from '$lib/navbar.svelte';
+	import { initTheme, theme } from '$lib/theme.svelte';
 	import './layout.css';
 
 	let { children } = $props();
 
 	const color = $derived(sectionFor(page.url.pathname)?.color ?? 'violet');
+
+	$effect(initTheme);
 
 	$effect(() => {
 		if ($locale) document.documentElement.lang = $locale.split('-')[0];
@@ -20,6 +23,7 @@
 </script>
 
 <svelte:head>
+	{#if theme.color}<meta name="theme-color" content={theme.color} />{/if}
 	<link rel="icon" type="image/png" sizes="32x32" href={asset('/favicon-32.png')} />
 	<link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
 	<link rel="apple-touch-icon" href={asset('/apple-touch-icon.png')} />

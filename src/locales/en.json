@@ -58,7 +58,8 @@
 		"menu": "menu",
 		"main-nav": "main",
 		"language": "Language",
-		"cursor-pause": "Pause cursor animation"
+		"cursor-pause": "Pause cursor animation",
+		"dark-theme": "Dark theme"
 	},
 	"not-found": {
 		"title": "Nothing here",

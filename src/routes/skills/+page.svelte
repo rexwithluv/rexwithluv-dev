@@ -24,7 +24,7 @@
 								target="_blank"
 								rel="noopener noreferrer"
 								title={$_('learn-more', { values: { skill: skill.name } })}
-								class="block border border-ink px-3 py-1.5 text-sm transition-colors hover:border-[var(--accent-bg)] hover:bg-[var(--accent-bg)] hover:text-[var(--accent-on)]"
+								class="block border border-ink px-3 py-1.5 text-sm transition-colors hover:bg-[var(--accent-bg)] hover:text-[var(--accent-on)]"
 							>
 								{skill.name}
 							</a>

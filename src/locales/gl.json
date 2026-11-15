@@ -58,7 +58,8 @@
 		"menu": "menú",
 		"main-nav": "principal",
 		"language": "Idioma",
-		"cursor-pause": "Pausar a animación do cursor"
+		"cursor-pause": "Pausar a animación do cursor",
+		"dark-theme": "Tema oscuro"
 	},
 	"not-found": {
 		"title": "Aquí non hai nada",

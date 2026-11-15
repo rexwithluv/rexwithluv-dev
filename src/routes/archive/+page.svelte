@@ -67,7 +67,7 @@
 					target={external ? '_blank' : undefined}
 					rel={external ? 'noopener noreferrer' : undefined}
 					data-sveltekit-reload={external ? undefined : true}
-					class="justify-self-start border border-ink px-3 py-1.5 text-sm whitespace-nowrap transition-colors hover:border-[var(--accent-bg)] hover:bg-[var(--accent-bg)] hover:text-[var(--accent-on)]"
+					class="justify-self-start border border-ink px-3 py-1.5 text-sm whitespace-nowrap transition-colors hover:bg-[var(--accent-bg)] hover:text-[var(--accent-on)]"
 				>
 					{external ? $_('archive.code') : $_('archive.visit')}
 					<span aria-hidden="true">{external ? '↗' : '→'}</span>
