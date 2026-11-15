@@ -71,7 +71,7 @@
 		"visit": "visit",
 		"code": "source code",
 		"now": "now",
-		"v2": "Redesign from scratch: terminal look, one colour per section and WCAG 2.2 AA accessibility.",
+		"v2": "Redesign from scratch: terminal look, vibrant colors and WCAG 2.2 AA accessibility.",
 		"v1": "The first complete version: SvelteKit, Tailwind and i18n in three languages, with a gradient background.",
 		"v0": "Prototype with a sidebar and GitHub API integration. Restarted in January 2026."
 	},
