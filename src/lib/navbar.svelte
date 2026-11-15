@@ -103,42 +103,44 @@
 		</button>
 	</div>
 
-	<button
-		bind:this={menuButton}
-		class="cursor-pointer border border-ink px-2 py-1 text-xs transition-colors hover:bg-ink hover:text-paper lg:hidden"
-		onclick={() => (menuOpen = !menuOpen)}
-		aria-label={$_('ui.menu')}
-		aria-expanded={menuOpen}
-		aria-controls="main-nav"
-	>
-		<span aria-hidden="true">{menuOpen ? '[x]' : `[${$_('ui.menu')}]`}</span>
-	</button>
+	<div class="flex items-center gap-1">
+		<button
+			bind:this={menuButton}
+			class="cursor-pointer border border-ink px-2 py-1 text-xs transition-colors hover:bg-ink hover:text-paper lg:hidden"
+			onclick={() => (menuOpen = !menuOpen)}
+			aria-label={$_('ui.menu')}
+			aria-expanded={menuOpen}
+			aria-controls="main-nav"
+		>
+			<span aria-hidden="true">{menuOpen ? '[x]' : `[${$_('ui.menu')}]`}</span>
+		</button>
 
-	<nav
-		bind:this={nav}
-		onfocusout={onNavFocusOut}
-		id="main-nav"
-		aria-label={$_('ui.main-nav')}
-		class="{menuOpen
-			? 'flex'
-			: 'hidden'} absolute top-20 right-5 left-5 z-50 flex-col gap-1 border border-ink bg-paper p-3 shadow-[5px_5px_0_0_var(--accent-deco)] lg:static lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
-	>
-		{#each sections as section, i}
-			{@const active = current?.id === section.id}
-			<a
-				href={href(section)}
-				data-color={section.color}
-				aria-current={active ? 'page' : undefined}
-				class="group px-2.5 py-1.5 text-sm transition-colors {active
-					? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
-					: 'hover:bg-[var(--accent-soft)]'}"
-			>
-				<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
-					>{String(i).padStart(2, '0')}</span
+		<nav
+			bind:this={nav}
+			onfocusout={onNavFocusOut}
+			id="main-nav"
+			aria-label={$_('ui.main-nav')}
+			class="{menuOpen
+				? 'flex'
+				: 'hidden'} absolute top-20 right-5 left-5 z-50 flex-col gap-1 border border-ink bg-paper p-3 shadow-[5px_5px_0_0_var(--accent-deco)] lg:static lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+		>
+			{#each sections as section, i}
+				{@const active = current?.id === section.id}
+				<a
+					href={href(section)}
+					data-color={section.color}
+					aria-current={active ? 'page' : undefined}
+					class="group px-2.5 py-1.5 text-sm transition-colors {active
+						? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
+						: 'hover:bg-[var(--accent-soft)]'}"
 				>
-				{$_(`navbar.${section.id}`).toLowerCase()}
-			</a>
-		{/each}
+					<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
+						>{String(i).padStart(2, '0')}</span
+					>
+					{$_(`navbar.${section.id}`).toLowerCase()}
+				</a>
+			{/each}
+		</nav>
 
 		<div class="relative lg:ml-3" bind:this={langBox}>
 			<button
@@ -175,5 +177,5 @@
 				</ul>
 			{/if}
 		</div>
-	</nav>
+	</div>
 </header>
