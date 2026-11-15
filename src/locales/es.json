@@ -1,27 +1,28 @@
 {
 	"navbar": {
 		"home": "Inicio",
-		"about": "Sobre mí",
+		"about-me": "Sobre mí",
 		"projects": "Proyectos",
 		"skills": "Skills",
 		"socials": "Redes sociales"
 	},
 	"home": {
 		"title": "Building <br /> Digital Threads.",
-		"body": "Soy <span class='font-semibold text-zinc-900'>Aarón</span>, desarrollador enfocado en crear soluciones estructuradas y escalables. Creo en el código escrito con paciencia, donde cada línea tiene un propósito y cada sistema se construye con cuidado."
+		"body": "Soy <strong>Aarón</strong>, desarrollador enfocado en crear soluciones estructuradas y escalables. Creo en el código escrito con paciencia, donde cada línea tiene un propósito y cada sistema se construye con cuidado."
 	},
 	"about-me": {
 		"title": "Sobre mí",
-		"path": "Mi camino en el desarrollo web está marcado por la <span class='font-bold text-indigo-500'>autocrítica</span>. Busco constantemente distintos puntos de vista para crear código que no solo sea funcional, sino también sostenible, comprensible y práctico, siguiendo siempre las mejores prácticas de cada herramienta.",
-		"hobbies": "Soy aficionado a los <span class='font-bold text-indigo-500'>videojuegos</span>, un entorno donde pongo a prueba mi pensamiento analítico y estratégico. Esta faceta me permite entrenar la planificación y la organización de sistemas complejos de una forma dinámica y lógica.",
-		"crochet": "Complemento esta mentalidad con el <span class='font-bold text-indigo-500'>ganchillo <span class='italic'>(crochet)</span></span>, un hobby que me recuerda la importancia de la paciencia y la calma. He aprendido que cuando el código no está de mi lado, la mejor forma de mantener el foco y la <span class='font-bold text-indigo-500 italic'>perseverancia</span> es respirar hondo: los grandes proyectos, al igual que el tejido, se construyen con calma, punto a punto."
+		"path": "Mi camino en el desarrollo web está marcado por la <strong>autocrítica</strong>. Busco constantemente distintos puntos de vista para crear código que no solo sea funcional, sino también sostenible, comprensible y práctico, siguiendo siempre las mejores prácticas de cada herramienta.",
+		"hobbies": "Soy aficionado a los <strong>videojuegos</strong>, un entorno donde pongo a prueba mi pensamiento analítico y estratégico. Esta faceta me permite entrenar la planificación y la organización de sistemas complejos de una forma dinámica y lógica.",
+		"crochet": "Complemento esta mentalidad con el <strong>ganchillo <em>(crochet)</em></strong>, un hobby que me recuerda la importancia de la paciencia y la calma. He aprendido que cuando el código no está de mi lado, la mejor forma de mantener el foco y la <strong><em>perseverancia</em></strong> es respirar hondo: los grandes proyectos, al igual que el tejido, se construyen con calma, punto a punto."
 	},
 	"projects": {
 		"title": "Proyectos",
 		"proyecto-pokemon": "Una de mis primeras aplicaciones web, hecha con el stack base para el desarrollo web estándar. Refactorizada años después con lo aprendido.",
 		"naga": "Un sistema de gestión diseñado para realizar un seguimiento de las prácticas de formación profesional (FCT).",
 		"mongo-verba": "Una web minimalista que almacena y muestra citas personales.",
-		"parking-vigo": "Visualiza en tiempo real el número de plazas disponibles en los diversos parkings de Vigo."
+		"parking-vigo": "Visualiza en tiempo real el número de plazas disponibles en los diversos parkings de Vigo.",
+		"portfolio": "¡Este mismo portfolio! Además, guarda un histórico de sus versiones anteriores."
 	},
 	"soft-skills": {
 		"modular-architecture": {
@@ -43,5 +44,21 @@
 	},
 	"learn-more": "Aprende más sobre {skill}",
 	"socials": "Redes sociales",
-	"footer": "Diseñado con lógica, tejido con pasión."
+	"footer": "Diseñado con",
+	"ui": {
+		"index": "índice",
+		"next": "siguiente",
+		"skip": "Saltar al contenido",
+		"menu": "menú",
+		"main-nav": "principal",
+		"language": "Idioma",
+		"cursor-pause": "Pausar la animación del cursor"
+	},
+	"not-found": {
+		"title": "Aquí no hay nada",
+		"body": "Esta página se ha soltado del ovillo.",
+		"back": "volver al inicio"
+	},
+	"footer-heart": "amor",
+	"footer-by": "por"
 }

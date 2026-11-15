@@ -2,16 +2,10 @@ import type { Project } from '../interfaces';
 
 const projects: Project[] = [
 	{
-		name: 'ProyectoPokémon',
-		desc: 'proyecto-pokemon',
-		techStack: ['HTML5', 'CSS3', 'JavaScript'],
-		url: 'https://rexwithluv.dev/proyecto-pokemon'
-	},
-	{
-		name: 'NAGA-FCT',
-		desc: 'naga',
-		techStack: ['Spring Boot', 'Vue', 'TypeScript', 'MariaDB'],
-		url: 'https://github.com/rexwithluv/naga-fct'
+		name: 'Portfolio',
+		desc: 'portfolio',
+		techStack: ['Svelte', 'TypeScript'],
+		url: 'https://github.com/rexwithluv/rexwithluv-dev'
 	},
 	{
 		name: 'MongoVerba',
@@ -23,7 +17,19 @@ const projects: Project[] = [
 		name: 'ParkingVigo',
 		desc: 'parking-vigo',
 		techStack: ['Svelte', 'TypeScript', 'Tailwind CSS'],
-		url: 'https://rexwithluv.dev/parking-vigo'
+		url: 'https://github.com/rexwithluv/parking-vigo'
+	},
+	{
+		name: 'NAGA-FCT',
+		desc: 'naga',
+		techStack: ['Spring Boot', 'Vue', 'TypeScript', 'MariaDB'],
+		url: 'https://github.com/rexwithluv/naga-fct'
+	},
+	{
+		name: 'ProyectoPokémon',
+		desc: 'proyecto-pokemon',
+		techStack: ['HTML5', 'CSS3', 'JavaScript'],
+		url: 'https://github.com/rexwithluv/proyecto-pokemon'
 	}
 ];
 

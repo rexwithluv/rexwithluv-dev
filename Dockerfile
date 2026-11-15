@@ -10,21 +10,7 @@ COPY . .
 
 RUN npm run build
 
-FROM scratch AS v1src
-
-ADD https://github.com/rexwithluv/rexwithluv-dev.git#v1.0.0 /
-
-FROM node:22-alpine AS build-v1
-
-WORKDIR /app
-
-COPY --from=v1src /package*.json ./
-
-RUN npm install
-
-COPY --from=v1src / .
-
-RUN BASE_PATH=/v1 npm run build
+FROM ghcr.io/rexwithluv/rexwithluv-dev:1.0.0@sha256:1fa1e9692fa63990a927251e706c5ad5330578e71e8c43ed1f395aa06ffff1b8 AS v1
 
 FROM nginx:alpine
 
@@ -38,6 +24,6 @@ COPY nginx.conf /etc/nginx/conf.d/
 
 COPY --from=build /app/build/ /usr/share/nginx/html
 
-COPY --from=build-v1 /app/build/ /usr/share/nginx/html/v1
+COPY --from=v1 /usr/share/nginx/html/v1 /usr/share/nginx/html/v1
 
 CMD ["nginx", "-g", "daemon off;"]

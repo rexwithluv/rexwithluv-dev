@@ -1,70 +1,179 @@
 <script lang="ts">
+	import { page } from '$app/state';
 	import { _, locale, locales } from 'svelte-i18n';
+	import sections, { href, sectionFor } from './data/sections';
 	import GlobeIcon from './globe-icon.svelte';
 
-	let y: number = $state(0);
-	let isOpen = $state(false);
-	let isScrolled: boolean = $derived(y > 50);
+	let langOpen = $state(false);
+	let menuOpen = $state(false);
+	let langButton: HTMLButtonElement | undefined = $state();
+	let langBox: HTMLDivElement | undefined = $state();
+	let menuButton: HTMLButtonElement | undefined = $state();
+	let nav: HTMLElement | undefined = $state();
 
-	const pages: string[] = ['home', 'about', 'projects', 'skills', 'socials'];
+	const PAUSE_KEY = 'cursor-paused';
+	let cursorPaused = $state(false);
+	$effect(() => {
+		try {
+			cursorPaused = localStorage.getItem(PAUSE_KEY) === '1';
+		} catch {
+			/* storage unavailable: keep blinking */
+		}
+	});
+	const toggleCursor = () => {
+		cursorPaused = !cursorPaused;
+		try {
+			localStorage.setItem(PAUSE_KEY, cursorPaused ? '1' : '0');
+		} catch {
+			/* ignore */
+		}
+	};
 
-	const toggleLangDropdown = () => (isOpen = !isOpen);
+	const current = $derived(sectionFor(page.url.pathname));
+	const crumb = $derived(current && current.path !== '/' ? current.path.replace(/\/$/, '') : '');
 
 	const changeLanguage = (newLocale: string) => {
 		$locale = newLocale;
-		isOpen = false;
+		langOpen = false;
+
+		langButton?.focus();
 	};
+
+	const onKeydown = (e: KeyboardEvent) => {
+		if (e.key !== 'Escape') return;
+		if (langOpen) {
+			langOpen = false;
+			langButton?.focus();
+		} else if (menuOpen) {
+			const focusInside = nav?.contains(document.activeElement);
+			menuOpen = false;
+			if (focusInside) menuButton?.focus();
+		}
+	};
+
+	const onNavFocusOut = (e: FocusEvent) => {
+		const next = e.relatedTarget as Node | null;
+		if (menuOpen && next && !nav?.contains(next) && next !== menuButton) menuOpen = false;
+	};
+
+	const onClick = (e: MouseEvent) => {
+		if (langOpen && langBox && !langBox.contains(e.target as Node)) langOpen = false;
+	};
+
+	$effect(() => {
+		page.url.pathname;
+		menuOpen = false;
+	});
 </script>
 
-<svelte:window bind:scrollY={y} />
+<svelte:window onkeydown={onKeydown} onclick={onClick} />
 
-<div
-	class="fixed top-0 z-[1000] flex w-full items-center justify-between px-[10%] transition-all duration-500 ease-in-out {isScrolled
-		? 'bg-indigo-200/70 py-4 shadow-sm backdrop-blur-md'
-		: 'bg-transparent py-6'}"
+<div class="flex h-2 w-full" aria-hidden="true">
+	{#each [...sections.map((s) => s.color), 'violet'] as color, i}
+		<span
+			class="flex-1 transition-[flex-grow] duration-500"
+			style="background: var(--color-{color}); flex-grow: {current?.color === color ? 3 : 1}"
+		></span>
+	{/each}
+</div>
+
+<header
+	class="mx-auto flex max-w-6xl items-center justify-between gap-2 px-5 py-5 md:gap-4 md:px-10"
 >
-	<div class="logo text-lg font-bold tracking-tighter uppercase"><a href="#home">rexwithluv.dev</a></div>
-	<nav class="hidden space-x-9 md:flex">
-		{#if $locale}
-			{#each pages as page}
-				<a href="#{page}" class="text-sm font-normal transition-colors hover:text-indigo-500">
-					{$_(`navbar.${page}`)}
-				</a>
-			{/each}
-		{:else}
-			<p>Loading...</p>
-		{/if}
-		<div class="relative">
+	<div class="flex items-center">
+		<a href={href(sections[0])} class="py-1 text-xs font-medium whitespace-nowrap md:text-sm">
+			<span class="hidden text-ink-soft min-[360px]:inline">~/</span>rexwithluv.dev<span
+				class="accent">{crumb}</span
+			>
+		</a>
+		<button
+			type="button"
+			class="flex h-6 w-6 cursor-pointer items-center justify-start pl-0.5"
+			aria-label={$_('ui.cursor-pause')}
+			title={$_('ui.cursor-pause')}
+			aria-pressed={cursorPaused}
+			onclick={toggleCursor}
+		>
+			<span
+				aria-hidden="true"
+				class="inline-block h-4 w-2 bg-[var(--accent-deco)] {cursorPaused
+					? ''
+					: '[animation:blink_1.1s_steps(1)_infinite]'}"
+			></span>
+		</button>
+	</div>
+
+	<button
+		bind:this={menuButton}
+		class="border border-ink px-2 py-1 text-xs lg:hidden"
+		onclick={() => (menuOpen = !menuOpen)}
+		aria-label={$_('ui.menu')}
+		aria-expanded={menuOpen}
+		aria-controls="main-nav"
+	>
+		<span aria-hidden="true">{menuOpen ? '[x]' : '[menu]'}</span>
+	</button>
+
+	<nav
+		bind:this={nav}
+		onfocusout={onNavFocusOut}
+		id="main-nav"
+		aria-label={$_('ui.main-nav')}
+		class="{menuOpen
+			? 'flex'
+			: 'hidden'} absolute top-20 right-5 left-5 z-50 flex-col gap-1 border border-ink bg-paper p-3 shadow-[5px_5px_0_0_var(--accent-deco)] lg:static lg:flex lg:flex-row lg:items-center lg:gap-1 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none"
+	>
+		{#each sections as section, i}
+			{@const active = current?.id === section.id}
+			<a
+				href={href(section)}
+				data-color={section.color}
+				aria-current={active ? 'page' : undefined}
+				class="group px-2.5 py-1.5 text-sm transition-colors {active
+					? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
+					: 'hover:bg-[var(--accent-soft)]'}"
+			>
+				<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
+					>{String(i).padStart(2, '0')}</span
+				>
+				{$_(`navbar.${section.id}`).toLowerCase()}
+			</a>
+		{/each}
+
+		<div class="relative lg:ml-3" bind:this={langBox}>
 			<button
-				onclick={toggleLangDropdown}
-				class="flex cursor-pointer items-center gap-1 text-sm font-normal transition-colors hover:text-indigo-500"
-				aria-haspopup="true"
-				aria-expanded={isOpen}
+				bind:this={langButton}
+				onclick={() => (langOpen = !langOpen)}
+				class="flex cursor-pointer items-center gap-1.5 px-2.5 py-1.5 text-sm hover:bg-[var(--accent-soft)]"
+				aria-label="{$_('ui.language')}: {$locale?.split('-')[0]}"
+				aria-expanded={langOpen}
+				aria-controls="lang-list"
 			>
 				<GlobeIcon />
-				<span class="text-xs font-bold uppercase">{$locale?.split('-')[0]}</span>
+				<span class="text-xs">{$locale?.split('-')[0]}</span>
 			</button>
 
-			{#if isOpen}
-				<div
-					class="ring-opacity-5 absolute right-0 mt-2 w-32 rounded-md border border-gray-100 bg-white shadow-lg ring-1 ring-black"
-				>
-					<div class="py-1" role="menu">
-						{#each $locales as lang}
+			{#if langOpen}
+				<ul id="lang-list" class="absolute right-0 z-50 mt-2 w-24 border border-ink bg-paper">
+					{#each $locales as lang}
+						<li>
 							<button
+								{lang}
+								aria-current={$locale?.startsWith(lang) ? 'true' : undefined}
 								onclick={() => changeLanguage(lang)}
-								class="block w-full px-4 py-2 text-left text-sm text-gray-700 transition-colors hover:bg-indigo-50 hover:text-indigo-600 {$locale ===
-								lang
-									? 'font-bold text-indigo-500'
+								class="block w-full px-3 py-1.5 text-left text-sm hover:bg-[var(--accent-soft)] {$locale?.startsWith(
+									lang
+								)
+									? 'accent font-bold'
 									: ''}"
-								role="menuitem"
 							>
-								{lang.toUpperCase()}
+								<span aria-hidden="true">{$locale?.startsWith(lang) ? '>' : ' '}</span>
+								{lang}
 							</button>
-						{/each}
-					</div>
-				</div>
+						</li>
+					{/each}
+				</ul>
 			{/if}
 		</div>
 	</nav>
-</div>
+</header>
