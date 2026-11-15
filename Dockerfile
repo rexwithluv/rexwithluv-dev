@@ -8,7 +8,10 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+# Versión publicada (la pasa el CI); vacía en builds locales
+ARG APP_VERSION
+
+RUN APP_VERSION=$APP_VERSION npm run build
 
 FROM ghcr.io/rexwithluv/rexwithluv-dev:1.0.0@sha256:1fa1e9692fa63990a927251e706c5ad5330578e71e8c43ed1f395aa06ffff1b8 AS v1
 
