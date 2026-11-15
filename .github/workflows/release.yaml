@@ -14,14 +14,30 @@ jobs:
       pull-requests: write
 
     outputs:
-      published: ${{ steps.semantic-release.outputs.new_release_published }}
-      version: ${{ steps.semantic-release.outputs.new_release_version }}
+      version: ${{ steps.version.outputs.version }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
+
+      # GitHub rechaza a veces el push de refs/notes/semantic-release-* después
+      # de crear la etiqueta y la release se queda a medias. Esas notas solo
+      # guardan los canales (beta, next...), que aquí no se usan: se omite ese push.
+      - name: Skip semantic-release notes push
+        run: |
+          mkdir -p "$RUNNER_TEMP/gitshim"
+          cat > "$RUNNER_TEMP/gitshim/git" <<EOF
+          #!/usr/bin/env bash
+          if [ "\$1" = push ] && [[ "\$*" == *refs/notes/semantic-release* ]]; then
+            echo "Skipping notes push: \$*" >&2
+            exit 0
+          fi
+          exec $(command -v git) "\$@"
+          EOF
+          chmod +x "$RUNNER_TEMP/gitshim/git"
+          echo "$RUNNER_TEMP/gitshim" >> "$GITHUB_PATH"
 
       - name: Semantic Release
         id: semantic-release
@@ -35,9 +51,30 @@ jobs:
           extra_plugins: |
             conventional-changelog-conventionalcommits@9
 
+      # Versión a publicar: la nueva, o la etiqueta que ya tenga este commit
+      # (al relanzar un workflow que falló después de etiquetar)
+      - name: Resolve version
+        id: version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NEW_VERSION: ${{ steps.semantic-release.outputs.new_release_version }}
+        run: |
+          if [ -n "$NEW_VERSION" ]; then
+            echo "version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git fetch --tags --force
+          TAG=$(git tag --points-at HEAD --list 'v[0-9]*.[0-9]*.[0-9]*' | sort -V | tail -1)
+          if [ -z "$TAG" ]; then
+            echo "No new version"
+            exit 0
+          fi
+          gh release view "$TAG" >/dev/null 2>&1 || gh release create "$TAG" --verify-tag --generate-notes
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
   docker:
     needs: release
-    if: needs.release.outputs.published == 'true'
+    if: needs.release.outputs.version != ''
     runs-on: ubuntu-latest
     permissions:
       contents: read
