@@ -1,7 +1,7 @@
 {
 	"navbar": {
 		"home": "Home",
-		"about": "About",
+		"about-me": "About Me",
 		"projects": "Projects",
 		"skills": "Skills",
 		"socials": "Socials"
@@ -21,7 +21,8 @@
 		"proyecto-pokemon": "One of my first web applications, built using the core stack for standard web development. Refactored years later with everything I've learned since.",
 		"naga": "A management system designed to track FCT (vocational training internships).",
 		"mongo-verba": "A minimalist web application for collecting and managing personal quotes.",
-		"parking-vigo": "Track real-time parking availability across Vigo."
+		"parking-vigo": "Track real-time parking availability across Vigo.",
+		"portfolio": "This very portfolio! It also keeps a history of its previous versions."
 	},
 	"soft-skills": {
 		"modular-architecture": {
@@ -43,14 +44,21 @@
 	},
 	"learn-more": "Learn more about {skill}",
 	"socials": "Socials",
-	"footer": "Designed with logic, woven with passion.",
+	"footer": "Designed with",
 	"ui": {
 		"index": "index",
-		"next": "next"
+		"next": "next",
+		"skip": "Skip to content",
+		"menu": "menu",
+		"main-nav": "main",
+		"language": "Language",
+		"cursor-pause": "Pause cursor animation"
 	},
 	"not-found": {
 		"title": "Nothing here",
 		"body": "This page slipped off the yarn ball.",
 		"back": "back home"
-	}
+	},
+	"footer-heart": "love",
+	"footer-by": "by"
 }

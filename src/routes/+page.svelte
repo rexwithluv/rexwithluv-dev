@@ -11,8 +11,11 @@
 
 <section class="grid gap-16 md:min-h-[60vh] md:grid-cols-[1.4fr_1fr] md:items-end">
 	<div>
-		<p class="eyebrow mb-6">hello, world</p>
-		<h1 class="font-display text-5xl leading-[1.02] font-extrabold tracking-tight md:text-8xl">
+		<p class="eyebrow mb-6" lang="en">hello world</p>
+		<h1
+			lang="en"
+			class="font-display text-5xl leading-[1.02] font-extrabold tracking-tight md:text-8xl"
+		>
 			{@html $_('home.title')}
 		</h1>
 		<p class="prose-rich mt-8 max-w-xl text-base leading-relaxed text-ink-soft md:text-lg">
@@ -27,12 +30,19 @@
 				<li data-color={section.color} class="border-b-[1.5px] border-ink">
 					<a
 						href={href(section)}
-						class="group flex items-center gap-4 px-2 py-4 transition-colors hover:bg-[var(--accent)] hover:text-paper"
+						class="group flex items-center gap-4 px-2 py-4 transition-colors hover:bg-[var(--accent-bg)] hover:text-[var(--accent-on)]"
 					>
-						<span class="h-3 w-3 shrink-0 bg-[var(--accent)] group-hover:bg-paper"></span>
-						<span class="text-xs opacity-60">{String(i + 1).padStart(2, '0')}</span>
+						<span
+							aria-hidden="true"
+							class="h-3 w-3 shrink-0 bg-[var(--accent-deco)] group-hover:bg-[var(--accent-on)]"
+						></span>
+						<span
+							aria-hidden="true"
+							class="text-xs text-ink-soft group-hover:text-[var(--accent-on)]"
+							>{String(i + 1).padStart(2, '0')}</span
+						>
 						<span class="flex-1 text-lg">{$_(`navbar.${section.id}`).toLowerCase()}</span>
-						<span class="transition-transform group-hover:translate-x-1">→</span>
+						<span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
 					</a>
 				</li>
 			{/each}

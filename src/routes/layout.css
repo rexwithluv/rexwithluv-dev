@@ -9,25 +9,37 @@
 	--color-ink: #2a2019;
 	--color-ink-soft: #6b5a4b;
 
-	--color-red: #c4352b;
-	--color-orange: #c15a12;
-	--color-yellow: #9a6a00;
-	--color-green: #3d7a2e;
-	--color-blue: #2a62a3;
+	--color-red: #b13027;
+	--color-orange: #e8762a;
+	--color-orange-strong: #9b480e;
+	--color-yellow: #e6b02a;
+	--color-yellow-strong: #7c590e;
+	--color-green: #366c29;
+	--color-blue: #2961a1;
 	--color-violet: #7b3f9e;
 }
 
-/* Each page sets data-color on <body>-level wrapper; everything uses --accent. */
+[data-color] {
+	--accent-deco: var(--accent);
+	--accent-bg: var(--accent);
+	--accent-on: var(--color-paper);
+}
 [data-color='red'] {
 	--accent: var(--color-red);
 	--accent-soft: #f2c9bf;
 }
 [data-color='orange'] {
-	--accent: var(--color-orange);
+	--accent: var(--color-orange-strong);
+	--accent-deco: var(--color-orange);
+	--accent-bg: var(--color-orange);
+	--accent-on: var(--color-ink);
 	--accent-soft: #f6d2ae;
 }
 [data-color='yellow'] {
-	--accent: var(--color-yellow);
+	--accent: var(--color-yellow-strong);
+	--accent-deco: var(--color-yellow);
+	--accent-bg: var(--color-yellow);
+	--accent-on: var(--color-ink);
 	--accent-soft: #f7e19a;
 }
 [data-color='green'] {
@@ -54,7 +66,7 @@
 	body {
 		min-height: 100dvh;
 		background-color: var(--color-paper);
-		/* faint dotted grid, like squared notebook paper */
+
 		background-image: radial-gradient(rgb(42 32 25 / 0.09) 1px, transparent 1px);
 		background-size: 22px 22px;
 	}
@@ -69,7 +81,6 @@
 		outline-offset: 3px;
 	}
 
-	/* Highlights coming from the translation strings */
 	.prose-rich strong {
 		font-weight: 700;
 		color: var(--accent);
@@ -84,18 +95,17 @@
 		color: var(--accent);
 	}
 
-	/* Chunky card with an offset shadow in the page colour */
 	.card {
 		border: 1.5px solid var(--color-ink);
 		background: var(--color-paper);
-		box-shadow: 5px 5px 0 0 var(--accent);
+		box-shadow: 5px 5px 0 0 var(--accent-deco);
 		transition:
 			transform 160ms ease,
 			box-shadow 160ms ease;
 	}
 	a.card:hover {
 		transform: translate(-2px, -2px);
-		box-shadow: 8px 8px 0 0 var(--accent);
+		box-shadow: 8px 8px 0 0 var(--accent-deco);
 	}
 
 	.tag {

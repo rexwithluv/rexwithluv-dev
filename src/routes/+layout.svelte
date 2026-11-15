@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { asset } from '$app/paths';
 	import { page } from '$app/state';
-	import { isLoading, locale } from 'svelte-i18n';
+	import { _, isLoading, locale } from 'svelte-i18n';
 	import '../i18n';
 	import { sectionFor } from '$lib/data/sections';
 	import Footer from '$lib/footer.svelte';
@@ -10,12 +10,11 @@
 
 	let { children } = $props();
 
-	// Unknown routes (404) fall back to violet, the last colour of the rainbow.
 	const color = $derived(sectionFor(page.url.pathname)?.color ?? 'violet');
 
 	$effect(() => {
 		if ($locale) document.documentElement.lang = $locale.split('-')[0];
-		// keep the colour on <html> too so ::selection and scrollbars match
+
 		document.documentElement.dataset.color = color;
 	});
 </script>
@@ -26,9 +25,19 @@
 
 <div data-color={color} class="flex min-h-dvh flex-col">
 	{#if !$isLoading}
+		<a
+			href="#content"
+			class="sr-only z-50 border border-ink bg-paper px-3 py-2 text-sm focus:not-sr-only focus:absolute focus:top-4 focus:left-4"
+			>{$_('ui.skip')}</a
+		>
+
 		<Navbar />
 
-		<main class="mx-auto w-full max-w-6xl flex-1 px-5 pt-10 md:px-10 md:pt-20">
+		<main
+			id="content"
+			tabindex="-1"
+			class="mx-auto w-full max-w-6xl flex-1 px-5 pt-10 outline-none md:px-10 md:pt-20"
+		>
 			{#key page.url.pathname}
 				<div class="page-enter">
 					{@render children()}

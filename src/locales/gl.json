@@ -1,7 +1,7 @@
 {
 	"navbar": {
 		"home": "Inicio",
-		"about": "Sobre min",
+		"about-me": "Sobre min",
 		"projects": "Proxectos",
 		"skills": "Skills",
 		"socials": "Redes sociais"
@@ -21,7 +21,8 @@
 		"proyecto-pokemon": "Unha das miñas primeiras aplicacións web, feita co stack base para o desenvolvemento web estándar. Refactorizada anos despois co aprendido.",
 		"naga": "Un sistema de xestión deseñado para realizar un seguimento das prácticas de formación profesional (FCT).",
 		"mongo-verba": "Unha web minimalista que almacena e mostra citas persoais.",
-		"parking-vigo": "Visualiza en tempo real o número de prazas dispoñibles nos diversos parkings de Vigo."
+		"parking-vigo": "Visualiza en tempo real o número de prazas dispoñibles nos diversos parkings de Vigo.",
+		"portfolio": "Este mesmo portfolio! Ademais, garda un histórico das súas versións anteriores."
 	},
 	"soft-skills": {
 		"modular-architecture": {
@@ -43,14 +44,21 @@
 	},
 	"learn-more": "Aprende máis sobre {skill}",
 	"socials": "Redes sociais",
-	"footer": "Deseñado con lóxica, tecido con paixón.",
+	"footer": "Deseñado con",
 	"ui": {
 		"index": "índice",
-		"next": "seguinte"
+		"next": "seguinte",
+		"skip": "Saltar ao contido",
+		"menu": "menú",
+		"main-nav": "principal",
+		"language": "Idioma",
+		"cursor-pause": "Pausar a animación do cursor"
 	},
 	"not-found": {
 		"title": "Aquí non hai nada",
 		"body": "Esta páxina soltouse do noveló.",
 		"back": "volver ao inicio"
-	}
+	},
+	"footer-heart": "amor",
+	"footer-by": "por"
 }
