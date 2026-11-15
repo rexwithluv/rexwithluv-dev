@@ -3,6 +3,7 @@
 	import { _, locale, locales } from 'svelte-i18n';
 	import sections, { href, sectionFor } from './data/sections';
 	import GlobeIcon from './globe-icon.svelte';
+	import ThemeToggle from './theme-toggle.svelte';
 
 	let langOpen = $state(false);
 	let menuOpen = $state(false);
@@ -83,7 +84,7 @@
 	<div class="flex items-center">
 		<a href={href(sections[0])} class="py-1 text-xs font-medium whitespace-nowrap md:text-sm">
 			<span class="hidden text-ink-soft min-[360px]:inline">~/</span>rexwithluv.dev<span
-				class="accent">{crumb}</span
+				class="accent hidden min-[400px]:inline">{crumb}</span
 			>
 		</a>
 		<button
@@ -96,7 +97,7 @@
 		>
 			<span
 				aria-hidden="true"
-				class="inline-block h-4 w-2 bg-[var(--accent-deco)] {cursorPaused
+				class="cursor-block inline-block h-4 w-2 bg-[var(--accent)] {cursorPaused
 					? ''
 					: '[animation:blink_1.1s_steps(1)_infinite]'}"
 			></span>
@@ -106,7 +107,7 @@
 	<div class="flex items-center gap-1">
 		<button
 			bind:this={menuButton}
-			class="cursor-pointer border border-ink px-2 py-1 text-xs transition-colors hover:bg-ink hover:text-paper xl:hidden"
+			class="flex h-8 cursor-pointer items-center border border-ink px-2 text-xs transition-colors hover:bg-ink hover:text-paper xl:hidden"
 			onclick={() => (menuOpen = !menuOpen)}
 			aria-label={$_('ui.menu')}
 			aria-expanded={menuOpen}
@@ -131,7 +132,7 @@
 					data-color={section.color}
 					aria-current={active ? 'page' : undefined}
 					class="group px-2.5 py-1.5 text-sm transition-colors {active
-						? 'bg-[var(--accent-bg)] text-[var(--accent-on)]'
+						? 'bg-[var(--accent-bg)] font-bold text-[var(--accent-on)]'
 						: 'hover:bg-[var(--accent-soft)]'}"
 				>
 					<span aria-hidden="true" class={active ? '' : 'text-ink-soft group-hover:text-ink'}
@@ -142,11 +143,15 @@
 			{/each}
 		</nav>
 
-		<div class="relative xl:ml-3" bind:this={langBox}>
+		<div class="xl:ml-3">
+			<ThemeToggle />
+		</div>
+
+		<div class="relative" bind:this={langBox}>
 			<button
 				bind:this={langButton}
 				onclick={() => (langOpen = !langOpen)}
-				class="flex cursor-pointer items-center gap-1.5 px-2.5 py-1.5 text-sm hover:bg-[var(--accent-soft)]"
+				class="flex h-8 cursor-pointer items-center gap-1 px-1.5 text-sm transition-colors hover:bg-ink hover:text-paper md:gap-1.5 md:px-2"
 				aria-label="{$_('ui.language')}: {$locale?.split('-')[0]}"
 				aria-expanded={langOpen}
 				aria-controls="lang-list"
@@ -163,7 +168,7 @@
 								{lang}
 								aria-current={$locale?.startsWith(lang) ? 'true' : undefined}
 								onclick={() => changeLanguage(lang)}
-								class="block w-full px-3 py-1.5 text-left text-sm hover:bg-[var(--accent-soft)] {$locale?.startsWith(
+								class="block w-full px-3 py-1.5 text-left text-sm transition-colors hover:bg-ink hover:text-paper {$locale?.startsWith(
 									lang
 								)
 									? 'accent font-bold'

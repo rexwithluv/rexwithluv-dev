@@ -3,5 +3,9 @@
 		"*.css": "tailwindcss"
 	},
 	"i18n-ally.localesPaths": ["src/locales"],
-	"i18n-ally.keystyle": "nested"
+	"i18n-ally.keystyle": "nested",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+	"[tailwindcss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
 }

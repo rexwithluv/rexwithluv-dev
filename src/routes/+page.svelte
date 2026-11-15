@@ -14,7 +14,7 @@
 		<p class="eyebrow mb-6" lang="en">hello world</p>
 		<h1
 			lang="en"
-			class="font-display text-5xl leading-[1.02] font-extrabold tracking-tight md:text-8xl"
+			class="font-display text-5xl leading-[1.02] font-extrabold tracking-tight md:text-6xl lg:text-8xl"
 		>
 			{@html $_('home.title')}
 		</h1>

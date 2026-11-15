@@ -3,13 +3,33 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="theme-color" content="#f6eee1" />
+		<script>
+			(function () {
+				var t;
+				try {
+					t = localStorage.getItem('theme');
+				} catch (e) {}
+				if (t !== 'dark' && t !== 'light')
+					t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+				document.documentElement.dataset.theme = t;
+			})();
+		</script>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300..700;1,400&family=Martian+Mono:wght@400..800&display=swap"
 			rel="stylesheet"
 		/>
+
+		<meta name="description" content="@rexwithluv portfolio website" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="rexwithluv.dev" />
+		<meta property="og:title" content="rexwithluv.dev" />
+		<meta property="og:description" content="@rexwithluv portfolio website" />
+		<meta property="og:url" content="https://rexwithluv.dev/" />
+		<meta property="og:image" content="https://rexwithluv.dev/apple-touch-icon.png" />
+		<meta property="og:image:alt" content="The r_ logo with a rainbow stripe" />
+		<meta name="twitter:card" content="summary" />
 		%sveltekit.head%
 	</head>
 

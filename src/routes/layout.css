@@ -19,6 +19,24 @@
 	--color-violet: #7b3f9e;
 }
 
+:root[data-theme='dark'] {
+	color-scheme: dark;
+	--color-paper: #1c1612;
+	--color-paper-2: #272019;
+	--color-ink: #f1e6d6;
+	--color-ink-soft: #b8a592;
+	--dots: rgb(241 230 214 / 0.07);
+
+	--color-red: #f4806f;
+	--color-orange: #f39a55;
+	--color-orange-strong: #f39a55;
+	--color-yellow: #ecc04a;
+	--color-yellow-strong: #ecc04a;
+	--color-green: #8cc777;
+	--color-blue: #82b1ec;
+	--color-violet: #c99ae6;
+}
+
 [data-color] {
 	--accent-deco: var(--accent);
 	--accent-bg: var(--accent);
@@ -26,14 +44,14 @@
 }
 [data-color='red'] {
 	--accent: var(--color-red);
-	--accent-soft: #f2c9bf;
+	--accent-soft: #f5d7cf;
 }
 [data-color='orange'] {
 	--accent: var(--color-orange-strong);
 	--accent-deco: var(--color-orange);
 	--accent-bg: var(--color-orange);
 	--accent-on: var(--color-ink);
-	--accent-soft: #f6d2ae;
+	--accent-soft: #f7d7b6;
 }
 [data-color='yellow'] {
 	--accent: var(--color-yellow-strong);
@@ -48,11 +66,34 @@
 }
 [data-color='blue'] {
 	--accent: var(--color-blue);
-	--accent-soft: #c4d8ef;
+	--accent-soft: #cddef1;
 }
 [data-color='violet'] {
 	--accent: var(--color-violet);
-	--accent-soft: #e0cbec;
+	--accent-soft: #e3d0ee;
+}
+
+/* In dark mode accents are light, so filled states always use dark text. */
+:root[data-theme='dark'] [data-color] {
+	--accent-on: var(--color-paper);
+}
+:root[data-theme='dark'] [data-color='red'] {
+	--accent-soft: #4a231e;
+}
+:root[data-theme='dark'] [data-color='orange'] {
+	--accent-soft: #4a2c16;
+}
+:root[data-theme='dark'] [data-color='yellow'] {
+	--accent-soft: #453516;
+}
+:root[data-theme='dark'] [data-color='green'] {
+	--accent-soft: #25391f;
+}
+:root[data-theme='dark'] [data-color='blue'] {
+	--accent-soft: #1e3049;
+}
+:root[data-theme='dark'] [data-color='violet'] {
+	--accent-soft: #372545;
 }
 
 @layer base {
@@ -67,7 +108,7 @@
 		min-height: 100dvh;
 		background-color: var(--color-paper);
 
-		background-image: radial-gradient(rgb(42 32 25 / 0.09) 1px, transparent 1px);
+		background-image: radial-gradient(var(--dots, rgb(42 32 25 / 0.09)) 1px, transparent 1px);
 		background-size: 22px 22px;
 	}
 
@@ -124,7 +165,7 @@
 	}
 	.eyebrow::before {
 		content: '// ';
-		opacity: 0.6;
+		content: '// ' / '';
 	}
 
 	.page-enter {
@@ -142,6 +183,18 @@
 @keyframes blink {
 	50% {
 		opacity: 0;
+	}
+}
+
+@media (forced-colors: active) {
+	[aria-current='page'] {
+		text-decoration: underline;
+	}
+	.cursor-block {
+		background: CanvasText !important;
+	}
+	.card {
+		box-shadow: none;
 	}
 }
 

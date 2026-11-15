@@ -58,7 +58,8 @@
 		"menu": "menú",
 		"main-nav": "principal",
 		"language": "Idioma",
-		"cursor-pause": "Pausar la animación del cursor"
+		"cursor-pause": "Pausar la animación del cursor",
+		"dark-theme": "Tema oscuro"
 	},
 	"not-found": {
 		"title": "Aquí no hay nada",
@@ -71,7 +72,7 @@
 		"visit": "visitar",
 		"code": "código fuente",
 		"now": "hoy",
-		"v2": "Rediseño desde cero: estética de terminal, un color por sección y accesibilidad WCAG 2.2 AA.",
+		"v2": "Rediseño desde cero: estética de terminal, colores vibrantes y accesibilidad WCAG 2.2 AA.",
 		"v1": "La primera versión completa: SvelteKit, Tailwind e i18n en tres idiomas, con fondo degradado.",
 		"v0": "Prototipo con barra lateral e integración con la API de GitHub. Se reinició en enero de 2026."
 	},
