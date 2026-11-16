@@ -22,9 +22,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      # GitHub rechaza a veces el push de refs/notes/semantic-release-* después
-      # de crear la etiqueta y la release se queda a medias. Esas notas solo
-      # guardan los canales (beta, next...), que aquí no se usan: se omite ese push.
+
       - name: Skip semantic-release notes push
         run: |
           mkdir -p "$RUNNER_TEMP/gitshim"
@@ -45,14 +43,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          # Versiones fijadas: conventionalcommits@10 necesita un writer que
-          # semantic-release todavía no trae
+
           semantic_version: 24
           extra_plugins: |
             conventional-changelog-conventionalcommits@9
 
-      # Versión a publicar: la nueva, o la etiqueta que ya tenga este commit
-      # (al relanzar un workflow que falló después de etiquetar)
+
       - name: Resolve version
         id: version
         env:
@@ -112,8 +108,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-  # Apunta k8s/deployment.yaml a la imagen recién publicada. El push con
-  # GITHUB_TOKEN no vuelve a lanzar workflows, y al ser chore no saca versión.
+
   bump-k8s:
     needs: [release, docker]
     runs-on: ubuntu-latest
