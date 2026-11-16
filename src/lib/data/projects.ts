@@ -8,6 +8,12 @@ const projects: Project[] = [
 		url: 'https://github.com/rexwithluv/rexwithluv-dev'
 	},
 	{
+		name: 'Chuvasqueiro',
+		desc: 'chuvasqueiro',
+		techStack: ['Svelte', 'TypeScript'],
+		url: 'https://rexwithluv.dev/chuvasqueiro'
+	},
+	{
 		name: 'MongoVerba',
 		desc: 'mongo-verba',
 		techStack: ['NodeJS', 'ExpressJS', 'MongoDB', 'VueJS', 'TypeScript'],
