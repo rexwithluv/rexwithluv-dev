@@ -23,7 +23,8 @@
 		"naga": "A management system designed to track FCT (vocational training internships).",
 		"mongo-verba": "A minimalist web application for collecting and managing personal quotes.",
 		"parking-vigo": "Track real-time parking availability across Vigo.",
-		"portfolio": "This very portfolio! It also keeps a history of its previous versions."
+		"portfolio": "This very portfolio! It also keeps a history of its previous versions.",
+		"chuvasqueiro": "Tells you which Santiago bus to take to reach your destination, and whether you'll get wet on the way."
 	},
 	"soft-skills": {
 		"modular-architecture": {

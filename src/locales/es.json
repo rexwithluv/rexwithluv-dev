@@ -23,7 +23,8 @@
 		"naga": "Un sistema de gestión diseñado para realizar un seguimiento de las prácticas de formación profesional (FCT).",
 		"mongo-verba": "Una web minimalista que almacena y muestra citas personales.",
 		"parking-vigo": "Visualiza en tiempo real el número de plazas disponibles en los diversos parkings de Vigo.",
-		"portfolio": "¡Este mismo portfolio! Además, guarda un histórico de sus versiones anteriores."
+		"portfolio": "¡Este mismo portfolio! Además, guarda un histórico de sus versiones anteriores.",
+		"chuvasqueiro": "Te dice qué bus de Santiago coger para llegar a tu destino y si te vas a mojar por el camino."
 	},
 	"soft-skills": {
 		"modular-architecture": {
