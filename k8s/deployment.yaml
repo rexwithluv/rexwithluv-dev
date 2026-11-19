@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: rexwithluv-dev
-          image: ghcr.io/rexwithluv/rexwithluv-dev:2.3.0
+          image: ghcr.io/rexwithluv/rexwithluv-dev:2.3.1
           imagePullPolicy: Always
           ports:
             - containerPort: 80
