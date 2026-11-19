@@ -35,7 +35,7 @@ const projects: Project[] = [
 		name: 'ProyectoPokémon',
 		desc: 'proyecto-pokemon',
 		techStack: ['HTML5', 'CSS3', 'JavaScript'],
-		url: 'https://github.com/rexwithluv/proyecto-pokemon'
+		url: 'https://github.com/rexwithluv/ProyectoPokemon'
 	}
 ];
 
